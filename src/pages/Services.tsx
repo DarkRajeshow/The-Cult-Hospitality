@@ -61,8 +61,8 @@ const servicesContent = {
 // Service Introduction Component
 const ServiceIntro = () => {
   return (
-    <section className="relative min-h-[120vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
-      <img src='/assets/images/bedroom.png' className='absolute top-0 w-full h-full left-0'/>
+    <section className="relative min-h-screen sm:min-h-[120vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+      <img src='/assets/images/bedroom.png' className='absolute h-full w-full object-cover top-0 left-0'/>
       <div className='absolute top-0 w-full left-0 h-full bg-black/60'/>
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <motion.div>
@@ -177,7 +177,7 @@ const ServiceCTA = () => {
         <div className="text-center mb-20">
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <a
-              href="https://maps.app.goo.gl/feNH3ycMyEH4uWfE7"
+              href="https://maps.app.goo.gl/iPz1Rii6x26L6rECA"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white rounded-full font-medium text-lg hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -215,7 +215,7 @@ const ServiceCTA = () => {
               </div>
               <div>
                 <div className="text-sm text-slate-500">WhatsApp</div>
-                <div className="font-medium">+91 98765 43210</div>
+                <div className="font-medium">+91 7888172579</div>
               </div>
             </div>
             

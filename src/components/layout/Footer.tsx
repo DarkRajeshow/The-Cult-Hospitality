@@ -62,8 +62,8 @@ const Footer: React.FC = () => {
                                 {logo.name}
                             </span> */}
                             <Link to={'/'} className={`flex items-center`}>
-                                <div className='h-16 sm:h-20 md:h-30'>
-                                    <img className='w-16 sm:w-20 md:w-30' src="/assets/images/logo.png" alt="" />
+                                <div className='h-24 sm:h-20 md:h-30'>
+                                    <img className='w-24 sm:w-20 md:w-30' src="/assets/images/logo.png" alt="" />
                                 </div>
                             </Link>
                         </div>

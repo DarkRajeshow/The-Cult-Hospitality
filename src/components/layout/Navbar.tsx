@@ -43,11 +43,11 @@ const Navbar = () => {
                 : ''
                 }`}>
                 <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-                    <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
+                    <div className={`flex items-center justify-between h-20 sm:h-24 md:h-28 ${isMobileMenuOpen && 'hidden'}`}>
                         {/* Logo Section */}
-                        <Link to={'/'} className={`flex items-center ${isMobileMenuOpen ? 'hidden lg:flex' : ''}`}>
-                            <div className='h-14 sm:h-20 md:h-24 w-auto'>
-                                <img className='h-full w-auto max-w-[120px] sm:max-w-[160px]' src="/assets/images/logo.png" alt="" />
+                        <Link to={'/'} className={`flex items-center`}>
+                            <div className='h-12 sm:h-20 md:h-26'>
+                                <img className='h-full' src="/assets/images/logo.png" alt="" />
                             </div>
                         </Link>
 
@@ -82,7 +82,7 @@ const Navbar = () => {
                         {/* Mobile Menu Button - Always visible on mobile */}
                         <button
                             onClick={toggleMobileMenu}
-                            className={`lg:hidden p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 ${isMobileMenuOpen ? 'absolute top-6 right-4': 'relative'}`}
+                            className={`lg:hidden p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 ${isMobileMenuOpen ? 'absolute top-6 right-4' : 'relative'}`}
                         >
                             {isMobileMenuOpen ? (
                                 <X size={24} />
@@ -106,11 +106,28 @@ const Navbar = () => {
 
                     {/* Mobile Menu Header */}
                     <div className="flex items-center justify-between p-6 border-b border-gray-100 z-20">
-                        <div className="flex items-center">
-                            <div className='h-20 w-20'>
-                                <img className='h-full' src="/assets/images/logo.png" alt="" />
+                        <button
+                            onClick={toggleMobileMenu}
+                            className={`lg:hidden p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 ${isMobileMenuOpen ? 'absolute top-6 right-4' : 'relative'}`}
+                        >
+                            {isMobileMenuOpen ? (
+                                <X size={24} />
+                            ) : (
+                                <Menu size={24} />
+                            )}
+                        </button>
+                        
+                        {/* <div className="flex items-center">
+                            <div className='h-20'>
+                                <img className='w-20' src="/assets/images/logo.png" alt="" />
                             </div>
-                        </div>
+                        </div> */}
+                        {/* 
+                        <Link to={'/'} className={`flex items-center`}>
+                            <div className='h-24 sm:h-20 md:h-30'>
+                                <img className='w-24 sm:w-20 md:w-30' src="/assets/images/logo.png" alt="" />
+                            </div>
+                        </Link> */}
 
 
                         {/* Backdrop */}
