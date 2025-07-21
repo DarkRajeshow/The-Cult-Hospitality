@@ -206,6 +206,7 @@ const ServiceCTA = () => {
           </div>
 
           {/* Contact Information */}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center md:justify-end gap-3 text-slate-600">
               <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
