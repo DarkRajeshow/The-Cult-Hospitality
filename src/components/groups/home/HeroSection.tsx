@@ -1,0 +1,498 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import { 
+  ChevronDown, 
+  Star, 
+  MapPin,
+  Play,
+  ArrowRight,
+  Sparkles,
+  Award,
+  Users
+} from 'lucide-react';
+
+// Enhanced floating particles with more variety
+const EnhancedParticle = ({ delay = 0, type = 'default' }) => {
+  const variants = {
+    default: {
+      className: "w-1 h-1 bg-amber-400/60 rounded-full",
+      animation: {
+        opacity: [0, 1, 0],
+        scale: [0, 1, 0],
+        y: [0, -120],
+        x: [0, Math.random() * 60 - 30]
+      }
+    },
+    sparkle: {
+      className: "w-2 h-2 bg-gradient-to-r from-amber-300 to-orange-400 rounded-full",
+      animation: {
+        opacity: [0, 1, 0.5, 1, 0],
+        scale: [0, 1.5, 0.8, 1.2, 0],
+        rotate: [0, 180, 360],
+        y: [0, -100],
+        x: [0, Math.random() * 40 - 20]
+      }
+    },
+    star: {
+      className: "w-3 h-3",
+      animation: {
+        opacity: [0, 1, 0],
+        scale: [0, 1, 0],
+        rotate: [0, 360],
+        y: [0, -150],
+        x: [0, Math.random() * 50 - 25]
+      }
+    }
+  };
+
+  const variant = variants[type];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={variant.animation}
+      transition={{
+        duration: type === 'star' ? 4 : 3,
+        delay,
+        repeat: Infinity,
+        repeatDelay: Math.random() * 3 + 1
+      }}
+      className={`absolute ${variant.className}`}
+      style={{
+        left: `${Math.random() * 100}%`,
+        top: `${75 + Math.random() * 25}%`
+      }}
+    >
+      {type === 'star' && (
+        <Sparkles className="w-full h-full text-amber-400/80 fill-amber-400/40" />
+      )}
+    </motion.div>
+  );
+};
+
+// Enhanced typewriter with more fluid animation
+const TypewriterText = ({ 
+  words, 
+  className = "" 
+}) => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  useEffect(() => {
+    const word = words[currentWordIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setCurrentText(word.substring(0, currentText.length + 1));
+        if (currentText === word) {
+          setTimeout(() => setIsDeleting(true), 2500);
+        }
+      } else {
+        setCurrentText(word.substring(0, currentText.length - 1));
+        if (currentText === '') {
+          setIsDeleting(false);
+          setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }
+    }, isDeleting ? 30 : Math.random() * 100 + 100);
+    
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, currentWordIndex, words]);
+  
+  return (
+    <span className={className}>
+      {currentText}
+      <motion.span
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity }}
+        className="text-amber-400"
+      >
+        |
+      </motion.span>
+    </span>
+  );
+};
+
+// Mouse follower effect
+const MouseFollower = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  useEffect(() => {
+    const updateMousePosition = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('mousemove', updateMousePosition);
+    return () => window.removeEventListener('mousemove', updateMousePosition);
+  }, []);
+  
+  return (
+    <motion.div
+      className="fixed w-96 h-96 rounded-full pointer-events-none z-10"
+      style={{
+        background: 'radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%)',
+        left: mousePosition.x - 192,
+        top: mousePosition.y - 192,
+      }}
+      animate={{
+        x: 0,
+        y: 0,
+      }}
+      transition={{
+        type: "spring",
+        damping: 30,
+        stiffness: 200,
+        mass: 0.5
+      }}
+    />
+  );
+};
+
+// Animated background elements
+const FloatingShapes = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute opacity-20"
+          initial={{ 
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            rotate: 0,
+            scale: 0.5
+          }}
+          animate={{
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            rotate: 360,
+            scale: [0.5, 1, 0.5]
+          }}
+          transition={{
+            duration: Math.random() * 20 + 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "linear"
+          }}
+        >
+          <div className={`w-${8 + i * 4} h-${8 + i * 4} border border-amber-400/30 ${
+            i % 2 === 0 ? 'rounded-full' : 'rounded-lg rotate-45'
+          }`} />
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
+const HeroSection = () => {
+  const { scrollY } = useScroll();
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  
+  // Enhanced parallax effects
+  const contentOpacity = useTransform(scrollY, [0, 200], [1, 0]);
+  const contentY = useTransform(scrollY, [0, 200], [0, -150]);
+  const overlayOpacity = useTransform(scrollY, [0, 150], [1, 0.3]);
+  
+  // Mouse movement effect
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springConfig = { damping: 25, stiffness: 700 };
+  const springX = useSpring(mouseX, springConfig);
+  const springY = useSpring(mouseY, springConfig);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      const x = (clientX - innerWidth / 2) / innerWidth;
+      const y = (clientY - innerHeight / 2) / innerHeight;
+      mouseX.set(x * 20);
+      mouseY.set(y * 20);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  return (
+    <div className="relative h-[80vh] sm:h-screen overflow-hidden">
+      {/* Mouse Follower */}
+      <MouseFollower />
+      
+      {/* Enhanced Background with Multiple Layers */}
+      <div
+        className="absolute inset-0 scale-110"
+      >
+        {/* Primary Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/assets/images/lobby.png')`
+          }}
+        />
+        
+        {/* Secondary Background for Depth */}
+        {/* <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage: `url('/assets/images/bedroom.png')`
+            // No parallax y transform
+          }}
+        /> */}
+        
+        {/* Enhanced Gradient Overlays */}
+        <motion.div 
+          style={{ opacity: 1 }}
+          className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/70" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-orange-600/10" />
+        
+        {/* Dynamic Grain Effect */}
+        <motion.div
+          animate={{ 
+            backgroundPosition: ["0% 0%", "100% 100%", "0% 100%", "100% 0%"] 
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity, 
+            ease: "linear"
+          }}
+          className="absolute inset-0 opacity-25 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNCIgc2VlZD0iMiIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjQiLz48L3N2Zz4=')] bg-repeat"
+        />
+        
+        {/* Floating Geometric Shapes */}
+        <FloatingShapes />
+      </div>
+
+      {/* Enhanced Floating Particles System */}
+      {[...Array(8)].map((_, i) => (
+        <EnhancedParticle key={`default-${i}`} delay={i * 0.3} type="default" />
+      ))}
+      {[...Array(5)].map((_, i) => (
+        <EnhancedParticle key={`sparkle-${i}`} delay={i * 0.6 + 2} type="sparkle" />
+      ))}
+      {[...Array(3)].map((_, i) => (
+        <EnhancedParticle key={`star-${i}`} delay={i * 1.2 + 4} type="star" />
+      ))}
+
+      {/* Main Content with Mouse Following */}
+      <motion.div
+        style={{
+          x: springX,
+          rotateX: useTransform(springY, [-20, 20], [5, -5]),
+          rotateY: useTransform(springX, [-20, 20], [-5, 5])
+        }}
+        className="relative z-20 h-full flex items-center justify-center px-2 sm:px-6"
+      >
+        <div className="text-center max-w-2xl sm:max-w-6xl mx-auto perspective-1000">
+          {/* Enhanced Location Badge with Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.8 }}
+            animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.1, type: "spring", stiffness: 200 }}
+            className="mb-4 sm:mb-8 flex flex-wrap justify-center gap-2 sm:gap-4"
+          >
+            <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-amber-400" />
+              Solapur's Premier Destination
+            </div>
+            {/* <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
+              <Award className="w-4 h-4 text-amber-400" />
+              Award Winning Service
+            </div> */}
+            <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
+              <Users className="w-4 h-4 text-amber-400" />
+              10K+ Happy Guests
+            </div>
+          </motion.div>
+
+          {/* Enhanced Main Heading with 3D Effect */}
+          <div className="mb-4 sm:mb-8 perspective-1000">
+            <motion.h1
+              initial={{ opacity: 0 }}
+              animate={isLoaded ? { opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-3xl xs:text-4xl sm:text-6xl md:text-8xl font-semibold text-white mb-2 sm:mb-4 leading-tight sm:leading-none tracking-tight"
+            >
+              <motion.span
+                initial={{ y: 150, opacity: 0, rotateX: 90 }}
+                animate={isLoaded ? { y: 0, opacity: 1, rotateX: 0 } : {}}
+                transition={{ 
+                  duration: 1.2, 
+                  delay: 0.5, 
+                  type: "spring", 
+                  stiffness: 100,
+                  damping: 20
+                }}
+                className="block transform-gpu"
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                The Cult
+              </motion.span>
+              <motion.span
+                initial={{ y: 150, opacity: 0, rotateX: 90 }}
+                animate={isLoaded ? { y: 0, opacity: 1, rotateX: 0 } : {}}
+                transition={{ 
+                  duration: 1.2, 
+                  delay: 0.8, 
+                  type: "spring", 
+                  stiffness: 100,
+                  damping: 20
+                }}
+                className="block bg-gradient-to-r from-amber-300 via-orange-500 to-red-600 bg-clip-text text-transparent transform-gpu filter drop-shadow-2xl"
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                Hospitality
+              </motion.span>
+            </motion.h1>
+          </div>
+
+          {/* Enhanced Subtitle with Improved Animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="mb-6 sm:mb-12"
+          >
+            <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 font-medium mb-4 sm:mb-6 leading-relaxed">
+              Where luxury becomes{" "}
+              <TypewriterText 
+                words={["extraordinary", "unforgettable", "legendary", "magical", "timeless"]}
+                className="text-transparent bg-yellow-400 font-semibold bg-clip-text"
+              />
+            </p>
+            
+            {/* Enhanced Rating Display */}
+            <motion.div 
+              className="flex items-center justify-center gap-3 text-white/80 mb-4"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 1.5 }}
+            >
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, rotate: -180, scale: 0 }}
+                    animate={isLoaded ? { opacity: 1, rotate: 0, scale: 1 } : {}}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: 1.8 + i * 0.1,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                  >
+                    <Star className="w-6 h-6 fill-amber-400 text-amber-400 filter drop-shadow-lg" />
+                  </motion.div>
+                ))}
+              </div>
+              <span className="text-lg font-medium">5.0 Premium Experience</span>
+              <Sparkles className="w-5 h-5 text-amber-400" />
+            </motion.div>
+          </motion.div>
+
+          {/* Enhanced CTA Buttons with Better Interactions */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 2.2 }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
+          >
+            <motion.button
+              whileHover={{ 
+                scale: 1.05, 
+                boxShadow: "0 20px 40px rgba(251, 191, 36, 0.3)",
+                y: -2
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="relative bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-full text-base sm:text-lg font-semibold overflow-hidden group transition-all duration-300"
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              />
+              <span className="relative flex items-center gap-3 z-10">
+                Experience The Cult
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+              <motion.div
+                className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+              />
+            </motion.button>
+            
+            <motion.button
+              onClick={() => setShowVideo(true)}
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+                borderColor: "rgba(255, 255, 255, 0.8)"
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="text-white border-2 border-white/40 backdrop-blur-sm px-6 sm:px-10 py-3 sm:py-5 rounded-full text-base sm:text-lg font-semibold group transition-all duration-300"
+            >
+              <span className="flex items-center gap-3">
+                <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                Watch Our Story
+              </span>
+            </motion.button>
+          </motion.div>
+        </div>
+      </motion.div>
+
+     
+      {/* Enhanced Video Modal */}
+      <AnimatePresence>
+        {showVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-6"
+            onClick={() => setShowVideo(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.7, opacity: 0, rotateX: 20 }}
+              animate={{ scale: 1, opacity: 1, rotateX: 0 }}
+              exit={{ scale: 0.7, opacity: 0, rotateX: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="relative max-w-5xl w-full aspect-video bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="absolute inset-0 flex items-center justify-center text-white">
+                <div className="text-center">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    className="w-20 h-20 mx-auto mb-6 rounded-full border-4 border-amber-400/30 border-t-amber-400 flex items-center justify-center"
+                  >
+                    <Play className="w-8 h-8 text-amber-400 ml-1" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-2">Coming Soon</h3>
+                  <p className="text-white/70 text-lg">Our Story Awaits</p>
+                </div>
+              </div>
+              
+              <motion.button
+                whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setShowVideo(false)}
+                className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white flex items-center justify-center text-xl font-medium transition-all duration-200"
+              >
+                ×
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export default HeroSection;
