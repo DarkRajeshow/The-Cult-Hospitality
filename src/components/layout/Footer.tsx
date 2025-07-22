@@ -1,5 +1,5 @@
 import { Building, Calendar, ChefHat, Coffee, Mail, Phone, MapPin } from 'lucide-react';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const logo = {
@@ -46,26 +46,6 @@ const policies = [
 // };
 
 const Footer: React.FC = () => {
-    const [newsletterEmail, setNewsletterEmail] = useState('');
-    const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
-    const [newsletterError, setNewsletterError] = useState<string | null>(null);
-
-    const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setNewsletterError(null);
-        if (!newsletterEmail) {
-            setNewsletterError('Please enter your email.');
-            return;
-        }
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(newsletterEmail)) {
-            setNewsletterError('Please enter a valid email address.');
-            return;
-        }
-        setNewsletterSubmitted(true);
-        setTimeout(() => setNewsletterSubmitted(false), 3000);
-        setNewsletterEmail('');
-    };
-
     return (
         <footer className="bg-[#FFFBEA] border-t-2 border-black/5 text-black py-10 sm:py-16 px-3 sm:px-6 font-normal text-sm sm:text-base">
             <div className="max-w-7xl mx-auto">
