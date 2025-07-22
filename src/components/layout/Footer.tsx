@@ -1,5 +1,5 @@
 import { Building, Calendar, ChefHat, Coffee, Mail, Phone, MapPin } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const logo = {
@@ -46,6 +46,26 @@ const policies = [
 // };
 
 const Footer: React.FC = () => {
+    const [newsletterEmail, setNewsletterEmail] = useState('');
+    const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+    const [newsletterError, setNewsletterError] = useState<string | null>(null);
+
+    const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setNewsletterError(null);
+        if (!newsletterEmail) {
+            setNewsletterError('Please enter your email.');
+            return;
+        }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(newsletterEmail)) {
+            setNewsletterError('Please enter a valid email address.');
+            return;
+        }
+        setNewsletterSubmitted(true);
+        setTimeout(() => setNewsletterSubmitted(false), 3000);
+        setNewsletterEmail('');
+    };
+
     return (
         <footer className="bg-[#FFFBEA] border-t-2 border-black/5 text-black py-10 sm:py-16 px-3 sm:px-6 font-normal text-sm sm:text-base">
             <div className="max-w-7xl mx-auto">
@@ -119,10 +139,25 @@ const Footer: React.FC = () => {
                         </ul>
                         {/* <div className="pt-4">
                             <h5 className="text-sm font-medium text-gray-400 mb-2">Newsletter</h5>
-                            <div className="flex space-x-2">
-                                <input placeholder={newsletter.placeholder} className="bg-gray-800 py-2 px-3 rounded-full border-gray-700 text-white placeholder-gray-400 focus:border-amber-400" />
-                                <button className="bg-gradient-to-r rounded-full py-2 px-3 from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600">{newsletter.button}</button>
-                            </div>
+                            <form className="flex space-x-2" onSubmit={handleNewsletterSubmit}>
+                                <input 
+                                    placeholder="Your email" 
+                                    className="bg-gray-800 py-2 px-3 rounded-full border-gray-700 text-white placeholder-gray-400 focus:border-amber-400" 
+                                    value={newsletterEmail}
+                                    onChange={e => setNewsletterEmail(e.target.value)}
+                                    type="email"
+                                    required
+                                />
+                                <button 
+                                    className="bg-gradient-to-r rounded-full py-2 px-3 from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white font-semibold"
+                                    type="submit"
+                                    disabled={newsletterSubmitted}
+                                >
+                                    {newsletterSubmitted ? 'Thank You!' : 'Subscribe'}
+                                </button>
+                            </form>
+                            {newsletterError && <p className="text-red-600 text-xs mt-2">{newsletterError}</p>}
+                            {newsletterSubmitted && <p className="text-green-600 text-xs mt-2">We'll be in touch soon with exclusive offers!</p>}
                         </div> */}
                     </div>
                 </div>

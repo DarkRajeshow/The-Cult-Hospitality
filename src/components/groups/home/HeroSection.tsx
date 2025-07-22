@@ -1,13 +1,14 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
-import { 
-  Star, 
+import {
+  Star,
   MapPin,
   Play,
   ArrowRight,
   Sparkles,
   Users
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Enhanced floating particles with more variety
 interface EnhancedParticleProps {
@@ -77,14 +78,14 @@ interface TypewriterTextProps {
   words: string[];
   className?: string;
 }
-const TypewriterText: React.FC<TypewriterTextProps> = ({ 
-  words, 
-  className = "" 
+const TypewriterText: React.FC<TypewriterTextProps> = ({
+  words,
+  className = ""
 }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   useEffect(() => {
     const word = words[currentWordIndex];
     const timeout = setTimeout(() => {
@@ -101,10 +102,10 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
         }
       }
     }, isDeleting ? 30 : Math.random() * 100 + 100);
-    
+
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentWordIndex, words]);
-  
+
   return (
     <span className={className}>
       {currentText}
@@ -122,16 +123,16 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
 // Mouse follower effect
 const MouseFollower: React.FC = () => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  
+
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
-    
+
     window.addEventListener('mousemove', updateMousePosition);
     return () => window.removeEventListener('mousemove', updateMousePosition);
   }, []);
-  
+
   return (
     <motion.div
       className="fixed w-96 h-96 rounded-full pointer-events-none z-10"
@@ -162,7 +163,7 @@ const FloatingShapes = () => {
         <motion.div
           key={i}
           className="absolute opacity-20"
-          initial={{ 
+          initial={{
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight,
             rotate: 0,
@@ -181,9 +182,8 @@ const FloatingShapes = () => {
             ease: "linear"
           }}
         >
-          <div className={`w-${8 + i * 4} h-${8 + i * 4} border border-amber-400/30 ${
-            i % 2 === 0 ? 'rounded-full' : 'rounded-lg rotate-45'
-          }`} />
+          <div className={`w-${8 + i * 4} h-${8 + i * 4} border border-amber-400/30 ${i % 2 === 0 ? 'rounded-full' : 'rounded-lg rotate-45'
+            }`} />
         </motion.div>
       ))}
     </div>
@@ -193,15 +193,15 @@ const FloatingShapes = () => {
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
-  
-  
+
+
   // Mouse movement effect
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springConfig = { damping: 25, stiffness: 700 };
   const springX = useSpring(mouseX, springConfig);
   const springY = useSpring(mouseY, springConfig);
-  
+
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 300);
     return () => clearTimeout(timer);
@@ -225,19 +225,19 @@ const HeroSection = () => {
     <div className="relative h-[80vh] sm:h-screen overflow-hidden">
       {/* Mouse Follower */}
       <MouseFollower />
-      
+
       {/* Enhanced Background with Multiple Layers */}
       <div
         className="absolute inset-0 scale-110"
       >
         {/* Primary Background */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('/assets/images/lobby.png')`
           }}
         />
-        
+
         {/* Secondary Background for Depth */}
         {/* <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
@@ -246,28 +246,28 @@ const HeroSection = () => {
             // No parallax y transform
           }}
         /> */}
-        
+
         {/* Enhanced Gradient Overlays */}
-        <motion.div 
+        <motion.div
           style={{ opacity: 1 }}
-          className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/70" 
+          className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/70"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-orange-600/10" />
-        
+
         {/* Dynamic Grain Effect */}
         <motion.div
-          animate={{ 
-            backgroundPosition: ["0% 0%", "100% 100%", "0% 100%", "100% 0%"] 
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%", "0% 100%", "100% 0%"]
           }}
-          transition={{ 
-            duration: 25, 
-            repeat: Infinity, 
+          transition={{
+            duration: 25,
+            repeat: Infinity,
             ease: "linear"
           }}
           className="absolute inset-0 opacity-25 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNCIgc2VlZD0iMiIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjQiLz48L3N2Zz4=')] bg-repeat"
         />
-        
+
         {/* Floating Geometric Shapes */}
         <FloatingShapes />
       </div>
@@ -325,10 +325,10 @@ const HeroSection = () => {
               <motion.span
                 initial={{ y: 150, opacity: 0, rotateX: 90 }}
                 animate={isLoaded ? { y: 0, opacity: 1, rotateX: 0 } : {}}
-                transition={{ 
-                  duration: 1.2, 
-                  delay: 0.5, 
-                  type: "spring", 
+                transition={{
+                  duration: 1.2,
+                  delay: 0.5,
+                  type: "spring",
                   stiffness: 100,
                   damping: 20
                 }}
@@ -340,10 +340,10 @@ const HeroSection = () => {
               <motion.span
                 initial={{ y: 150, opacity: 0, rotateX: 90 }}
                 animate={isLoaded ? { y: 0, opacity: 1, rotateX: 0 } : {}}
-                transition={{ 
-                  duration: 1.2, 
-                  delay: 0.8, 
-                  type: "spring", 
+                transition={{
+                  duration: 1.2,
+                  delay: 0.8,
+                  type: "spring",
                   stiffness: 100,
                   damping: 20
                 }}
@@ -364,15 +364,15 @@ const HeroSection = () => {
           >
             <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 font-medium mb-4 sm:mb-6 leading-relaxed">
               Where luxury becomes{" "}
-              <TypewriterText 
+              <TypewriterText
                 words={["extraordinary", "unforgettable", "legendary", "magical", "timeless"]}
                 className="text-transparent bg-yellow-400 font-semibold bg-clip-text"
               />
             </p>
-            
+
             {/* Enhanced Rating Display */}
-            <motion.div 
-              className="flex items-center justify-center gap-3 text-white/80 mb-4"
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 text-white/80 mb-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 1.5 }}
@@ -383,8 +383,8 @@ const HeroSection = () => {
                     key={i}
                     initial={{ opacity: 0, rotate: -180, scale: 0 }}
                     animate={isLoaded ? { opacity: 1, rotate: 0, scale: 1 } : {}}
-                    transition={{ 
-                      duration: 0.6, 
+                    transition={{
+                      duration: 0.6,
                       delay: 1.8 + i * 0.1,
                       type: "spring",
                       stiffness: 200
@@ -407,8 +407,8 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
           >
             <motion.button
-              whileHover={{ 
-                scale: 1.05, 
+              whileHover={{
+                scale: 1.05,
                 boxShadow: "0 20px 40px rgba(251, 191, 36, 0.3)",
                 y: -2
               }}
@@ -418,10 +418,12 @@ const HeroSection = () => {
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
-              <span className="relative flex items-center gap-3 z-10">
-                Experience The Cult
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
+              <Link to={"/services"}>
+                <span className="relative flex items-center gap-3 z-10">
+                  Experience The Cult
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Link>
               <motion.div
                 className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
               />
@@ -430,7 +432,7 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-     
+
       {/* Enhanced Video Modal */}
       <AnimatePresence>
         {showVideo && (
@@ -462,7 +464,7 @@ const HeroSection = () => {
                   <p className="text-white/70 text-lg">Our Story Awaits</p>
                 </div>
               </div>
-              
+
               <motion.button
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                 whileTap={{ scale: 0.9 }}

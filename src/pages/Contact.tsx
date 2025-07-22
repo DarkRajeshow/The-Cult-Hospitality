@@ -90,14 +90,14 @@ const Contact = () => {
             className="flex flex-col sm:flex-row gap-12 justify-center items-center my-20 font-medium"
           >
             <div className="flex items-center space-x-3">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
-                <Phone className="size-7 text-blue-600" />
+              <div className="size-16 sm:size-20 bg-blue-100 rounded-full flex items-center justify-center">
+                <Phone className="size-6 sm:size-7 text-blue-600" />
               </div>
               <div className="text-left">
-                <p className="text-xl text-black/70 tracking-wide">Call Us</p>
+                <p className="text-lg sm:text-xl text-black/70 tracking-wide">Call Us</p>
                 <a
                   href="tel:+917888172579"
-                  className="text-2xl font-medium text-gray-900"
+                  className="text-xl sm:text-2xl font-medium text-gray-900"
                 >
                   +91 78881 72579
                 </a>
@@ -105,14 +105,14 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center space-x-3">
-              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center">
-                <Mail className="size-7 text-purple-600" />
+              <div className="size-16 sm:size-20 bg-purple-100 rounded-full flex items-center justify-center">
+                <Mail className="size-6 sm:size-7 text-purple-600" />
               </div>
               <div className="text-left">
-                <p className="text-xl text-black/70 tracking-wide">Email Us</p>
+                <p className="text-lg sm:text-xl text-black/70 tracking-wide">Email Us</p>
                 <a
                   href="mailto:info@thecultstay.com"
-                  className="text-2xl font-medium text-gray-900"
+                  className="text-xl sm:text-2xl font-medium text-gray-900"
                 >
                   info@thecultstay.com
                 </a>

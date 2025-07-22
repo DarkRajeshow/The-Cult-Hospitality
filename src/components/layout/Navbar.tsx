@@ -46,7 +46,7 @@ const Navbar = () => {
                     <div className={`flex items-center justify-between h-20 sm:h-24 md:h-28 ${isMobileMenuOpen && 'hidden'}`}>
                         {/* Logo Section */}
                         <Link to={'/'} className={`flex items-center`}>
-                            <div className='h-12 sm:h-20 md:h-26'>
+                            <div className='h-16 sm:h-20 md:h-26'>
                                 <img className='h-full' src="/assets/images/logo.png" alt="" />
                             </div>
                         </Link>
