@@ -1,6 +1,4 @@
 import { Building, Calendar, ChefHat, Coffee, Mail, Phone, MapPin } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -24,10 +22,10 @@ const navigationLinks = [
 ];
 
 const experiences = [
-    { label: 'The Cult Stay', icon: Building, href: '#' },
-    { label: 'The Cult Banquet', icon: Calendar, href: '#' },
-    { label: 'The Cults Kitchen', icon: ChefHat, href: '#' },
-    { label: 'The Cults Café & Bistro', icon: Coffee, href: '#' },
+    { label: 'The Cult Stay', icon: Building, href: '/contact#Hotel' },
+    { label: 'The Cult Banquet', icon: Calendar, href: '/contact#Banquet' },
+    { label: 'The Cults Kitchen', icon: ChefHat, href: '/contact#Shop' },
+    { label: 'The Cults Café & Bistro', icon: Coffee, href: '/contact#Café' },
 ];
 
 const contactInfo = [
@@ -42,10 +40,10 @@ const policies = [
     { label: 'Cookies', href: '#' },
 ];
 
-const newsletter = {
-    placeholder: 'Your email',
-    button: 'Subscribe',
-};
+// const newsletter = {
+//     placeholder: 'Your email',
+//     button: 'Subscribe',
+// };
 
 const Footer: React.FC = () => {
     return (

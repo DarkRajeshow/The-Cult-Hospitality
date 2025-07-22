@@ -14,9 +14,9 @@ const containerVariants = {
     }
 };
 
-const AnimatedSection = ({ children, className = "" }) => {
+const AnimatedSection = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
     const controls = useAnimation();
-    const ref = React.useRef(null);
+    const ref = React.useRef<any>(null);
     const inView = useInView(ref, { once: true, margin: "-100px" });
 
     useEffect(() => {

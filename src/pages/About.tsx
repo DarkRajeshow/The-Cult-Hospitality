@@ -3,9 +3,7 @@ import AboutHero from '@/components/groups/about/AboutHero';
 import MissionSection from '@/components/groups/about/MissionSection';
 import StorySection from '@/components/groups/about/StorySection';
 import Highlights from '@/components/groups/about/Highlights';
-// import CallToAction from '@/components/groups/home/CallToAction';
 import { Shield, Zap, Smile } from 'lucide-react';
-import { SUCCESS_RATE, CASES_SOLVED } from "@/utils/constants";
 
 // Content configuration object
 const aboutContent = {

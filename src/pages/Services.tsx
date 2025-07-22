@@ -1,61 +1,55 @@
-import { Shield, CheckCircle, Phone } from 'lucide-react';
-// import { CardSpotlight } from '../components/ui/card-spotlight';
-import { ContainerTextFlip } from '../components/ui/container-text-flip';
-// import { ColourfulText } from '../components/ui/colourful-text';
-// import { ColourfulText } from '../components/ui/colourful-text';
-import { BackgroundBeams } from '../components/ui/background-beams';
 import { motion } from 'framer-motion';
 import ServicesList from '@/components/groups/services/ServicesList';
 
 // Content object for easy editing
-const servicesContent = {
-  intro: {
-    heading: "What Do We Create?",
-    subtext: "We bring hospitality to life through concept-driven spaces, immersive dining experiences, and soulful brand narratives. Our focus isn’t just on what’s served—but how it makes people feel."
-  },
-  services: [
-    {
-      id: 1,
-      title: "F&B Concept Development",
-      description: "We specialize in building bold, original food and beverage brands—from the ground up. From menu engineering to vibe curation, we design every layer to tell a story.",
-      icon: "🍽️"
-    },
-    {
-      id: 2,
-      title: "Hospitality Brand Incubation",
-      description: "We don’t just operate brands—we co-create them. Cult Hospitality partners with visionaries to launch, shape, and scale purpose-led hospitality ventures.",
-      icon: "🌱"
-    },
-    {
-      id: 3,
-      title: "Experience Design",
-      description: "Every Cult space is crafted to leave a lasting impression. We focus on creating atmospheric, immersive guest experiences that spark connection and curiosity.",
-      icon: "🎭"
-    },
-    {
-      id: 4,
-      title: "Operations & Management",
-      description: "We manage hospitality operations with a sharp eye on quality, efficiency, and guest satisfaction—translating vision into seamless day-to-day execution.",
-      icon: "🛎️"
-    },
-    {
-      id: 5,
-      title: "Strategic Collaborations",
-      description: "We collaborate with creators, chefs, and cultural tastemakers to build brands that resonate deeply and travel far beyond their physical locations.",
-      icon: "🤝"
-    }
-  ],
-  policy: {
-    mainHeading: "Curated, Not Copied",
-    trustWords: ["Vision-First Approach", "Hands-On Craftsmanship", "People-Driven Philosophy"],
-    description: "We believe hospitality should feel like art and operate like science. Our process centers on thoughtful collaboration, originality, and delivering value beyond the expected."
-  },
-  cta: {
-    heading: "Let’s Build Something Iconic",
-    subtext: "Looking to craft a hospitality experience that stands out? We’d love to hear your vision.",
-    buttonText: "Start a Conversation"
-  }
-};
+// const servicesContent = {
+//   intro: {
+//     heading: "What Do We Create?",
+//     subtext: "We bring hospitality to life through concept-driven spaces, immersive dining experiences, and soulful brand narratives. Our focus isn’t just on what’s served—but how it makes people feel."
+//   },
+//   services: [
+//     {
+//       id: 1,
+//       title: "F&B Concept Development",
+//       description: "We specialize in building bold, original food and beverage brands—from the ground up. From menu engineering to vibe curation, we design every layer to tell a story.",
+//       icon: "🍽️"
+//     },
+//     {
+//       id: 2,
+//       title: "Hospitality Brand Incubation",
+//       description: "We don’t just operate brands—we co-create them. Cult Hospitality partners with visionaries to launch, shape, and scale purpose-led hospitality ventures.",
+//       icon: "🌱"
+//     },
+//     {
+//       id: 3,
+//       title: "Experience Design",
+//       description: "Every Cult space is crafted to leave a lasting impression. We focus on creating atmospheric, immersive guest experiences that spark connection and curiosity.",
+//       icon: "🎭"
+//     },
+//     {
+//       id: 4,
+//       title: "Operations & Management",
+//       description: "We manage hospitality operations with a sharp eye on quality, efficiency, and guest satisfaction—translating vision into seamless day-to-day execution.",
+//       icon: "🛎️"
+//     },
+//     {
+//       id: 5,
+//       title: "Strategic Collaborations",
+//       description: "We collaborate with creators, chefs, and cultural tastemakers to build brands that resonate deeply and travel far beyond their physical locations.",
+//       icon: "🤝"
+//     }
+//   ],
+//   policy: {
+//     mainHeading: "Curated, Not Copied",
+//     trustWords: ["Vision-First Approach", "Hands-On Craftsmanship", "People-Driven Philosophy"],
+//     description: "We believe hospitality should feel like art and operate like science. Our process centers on thoughtful collaboration, originality, and delivering value beyond the expected."
+//   },
+//   cta: {
+//     heading: "Let’s Build Something Iconic",
+//     subtext: "Looking to craft a hospitality experience that stands out? We’d love to hear your vision.",
+//     buttonText: "Start a Conversation"
+//   }
+// };
 
 
 // Service Introduction Component

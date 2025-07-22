@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Star,
   Shield,
@@ -100,30 +99,6 @@ const testimonials: Testimonial[] = [
 
 
 const Home = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  // const handleEmailSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (email) {
-  //     setIsSubmitted(true);
-  //     setTimeout(() => setIsSubmitted(false), 3000);
-  //     setEmail('');
-  //   }
-  // };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-rose-50">
       <HeroSection />

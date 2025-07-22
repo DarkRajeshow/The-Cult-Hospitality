@@ -1,5 +1,4 @@
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import { CASES_SOLVED } from "@/utils/constants";
 
 const data = [
     {

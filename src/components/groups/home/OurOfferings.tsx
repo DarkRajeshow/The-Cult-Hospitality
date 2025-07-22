@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { easeOut } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -42,7 +43,7 @@ const itemVariants = {
         y: 0,
         transition: {
             duration: 0.6,
-            ease: "easeOut"
+            ease: easeOut
         }
     }
 };
@@ -54,7 +55,7 @@ const imageVariants = {
         scale: 1,
         transition: {
             duration: 0.8,
-            ease: "easeOut"
+            ease: easeOut
         }
     },
     exit: {
@@ -92,10 +93,6 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings }) => {
         setSelectedImage(offering.hoverImage || offering.image);
     };
 
-    const handleCardLeave = () => {
-        setActiveCard(null);
-        setSelectedImage(offerings[0].image);
-    };
 
     const handleCardClick = (offering: Offering) => {
         setSelectedImage(offering.hoverImage || offering.image);
@@ -120,7 +117,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center">
                     {/* Left Side - Cards */}
                     <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
-                        {offerings.map((offering, index) => (
+                        {offerings.map((offering) => (
                             <motion.div
                                 key={offering.id}
                                 variants={itemVariants}

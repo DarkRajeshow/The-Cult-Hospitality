@@ -30,7 +30,7 @@ const itemVariants: Variants = {
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials }) => {
   return (
     <section className="py-12 sm:py-24 px-2 sm:px-6 bg-gradient-to-br from-slate-50 to-gray-100">
-      {/* <div className="max-w-2xl overflow-hidden  sm:max-w-7xl mx-auto">
+      <div className="max-w-2xl overflow-hidden  sm:max-w-7xl mx-auto">
         <motion.div variants={itemVariants} initial="hidden" animate="visible" className="text-center mb-8 sm:mb-16">
           <Badge className="bg-purple-100 text-purple-800 border-purple-200 mb-4 sm:mb-6 text-xs sm:text-base">
             GUEST EXPERIENCES
@@ -47,7 +47,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials 
             <div className="text-center text-gray-500">No testimonials available.</div>
           )}
         </motion.div>
-      </div> */}
+      </div>
     </section>
   );
 };

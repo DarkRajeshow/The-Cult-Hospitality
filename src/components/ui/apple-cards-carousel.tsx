@@ -35,7 +35,7 @@ interface ImageProps {
   src: string;
   className?: string;
   alt?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export const CarouselContext = createContext<{

@@ -1,19 +1,21 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import React, { useEffect, useState} from 'react';
+import { motion, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { 
-  ChevronDown, 
   Star, 
   MapPin,
   Play,
   ArrowRight,
   Sparkles,
-  Award,
   Users
 } from 'lucide-react';
 
 // Enhanced floating particles with more variety
-const EnhancedParticle = ({ delay = 0, type = 'default' }) => {
-  const variants = {
+interface EnhancedParticleProps {
+  delay?: number;
+  type?: 'default' | 'sparkle' | 'star';
+}
+const EnhancedParticle: React.FC<EnhancedParticleProps> = ({ delay = 0, type = 'default' }) => {
+  const variants: Record<'default' | 'sparkle' | 'star', { className: string; animation: any }> = {
     default: {
       className: "w-1 h-1 bg-amber-400/60 rounded-full",
       animation: {
@@ -71,7 +73,11 @@ const EnhancedParticle = ({ delay = 0, type = 'default' }) => {
 };
 
 // Enhanced typewriter with more fluid animation
-const TypewriterText = ({ 
+interface TypewriterTextProps {
+  words: string[];
+  className?: string;
+}
+const TypewriterText: React.FC<TypewriterTextProps> = ({ 
   words, 
   className = "" 
 }) => {
@@ -114,11 +120,11 @@ const TypewriterText = ({
 };
 
 // Mouse follower effect
-const MouseFollower = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+const MouseFollower: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   
   useEffect(() => {
-    const updateMousePosition = (e) => {
+    const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     
@@ -185,15 +191,9 @@ const FloatingShapes = () => {
 };
 
 const HeroSection = () => {
-  const { scrollY } = useScroll();
   const [isLoaded, setIsLoaded] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   
-  // Enhanced parallax effects
-  const contentOpacity = useTransform(scrollY, [0, 200], [1, 0]);
-  const contentY = useTransform(scrollY, [0, 200], [0, -150]);
-  const overlayOpacity = useTransform(scrollY, [0, 150], [1, 0.3]);
   
   // Mouse movement effect
   const mouseX = useMotionValue(0);
@@ -208,7 +208,7 @@ const HeroSection = () => {
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
       const x = (clientX - innerWidth / 2) / innerWidth;
@@ -425,22 +425,6 @@ const HeroSection = () => {
               <motion.div
                 className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
               />
-            </motion.button>
-            
-            <motion.button
-              onClick={() => setShowVideo(true)}
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "rgba(255, 255, 255, 0.15)",
-                borderColor: "rgba(255, 255, 255, 0.8)"
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="text-white border-2 border-white/40 backdrop-blur-sm px-6 sm:px-10 py-3 sm:py-5 rounded-full text-base sm:text-lg font-semibold group transition-all duration-300"
-            >
-              <span className="flex items-center gap-3">
-                <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                Watch Our Story
-              </span>
             </motion.button>
           </motion.div>
         </div>

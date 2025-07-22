@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Coffee, Bed, Utensils, Wheat } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -32,16 +31,7 @@ const Contact = () => {
       iconColor: "text-blue-600",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60825.273859370864!2d75.8472690523744!3d17.6700585824414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5d159f87fa887%3A0x1610b7c07da62f0d!2sThe%20Cult%20Stay!5e0!3m2!1sen!2sin!4v1753090494422!5m2!1sen!2sin"
     },
-    {
-      name: "The Cult Café",
-      type: "Cozy Modern Café",
-      address: "Near Old IMS Road, Opposite Joshi Petrol Pump, Solapur, Maharashtra, India",
-      email: "info@thecultstay.com",
-      icon: Coffee,
-      iconBg: "bg-amber-50",
-      iconColor: "text-amber-600",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60825.273859370864!2d75.8472690523744!3d17.6700585824414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5dbc72bf26db5%3A0x4dca8e87d1701a6c!2sThe%20Cult%20Banquet!5e0!3m2!1sen!2sin!4v1753090468995!5m2!1sen!2sin"
-    },
+
     {
       name: "The Cult Banquet",
       type: "Stylish Banquet Hall",
@@ -53,7 +43,7 @@ const Contact = () => {
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60825.273859370864!2d75.8472690523744!3d17.6700585824414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5dbc72bf26db5%3A0x4dca8e87d1701a6c!2sThe%20Cult%20Banquet!5e0!3m2!1sen!2sin!4v1753090468995!5m2!1sen!2sin"
     },
     {
-      name: "Cult's Nuts and Millets",
+      name: "The Cult's Kitchen",
       type: "Health-Focused Food Shop",
       address: "Near Old IMS Road, Opposite Joshi Petrol Pump, Solapur, Maharashtra, India",
       email: "info@thecultstay.com",
@@ -61,7 +51,17 @@ const Contact = () => {
       iconBg: "bg-green-50",
       iconColor: "text-green-600",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60825.273859370864!2d75.8472690523744!3d17.6700585824414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5dbc72bf26db5%3A0x4dca8e87d1701a6c!2sThe%20Cult%20Banquet!5e0!3m2!1sen!2sin!4v1753090468995!5m2!1sen!2sin"
-    }
+    },
+    {
+      name: "The Cult Café",
+      type: "Cozy Modern Café",
+      address: "Near Old IMS Road, Opposite Joshi Petrol Pump, Solapur, Maharashtra, India",
+      email: "info@thecultstay.com",
+      icon: Coffee,
+      iconBg: "bg-amber-50",
+      iconColor: "text-amber-600",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60825.273859370864!2d75.8472690523744!3d17.6700585824414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5dbc72bf26db5%3A0x4dca8e87d1701a6c!2sThe%20Cult%20Banquet!5e0!3m2!1sen!2sin!4v1753090468995!5m2!1sen!2sin"
+    },
   ];
 
   return (
@@ -141,12 +141,14 @@ const Contact = () => {
               if (location.name.includes('Stay')) badge = 'Hotel';
               else if (location.name.includes('Café')) badge = 'Café';
               else if (location.name.includes('Banquet')) badge = 'Banquet';
-              else if (location.name.includes('Millets')) badge = 'Shop';
+              else if (location.name.includes('Kitchen')) badge = 'Shop';
 
               return (
                 <motion.div
                   key={index}
                   variants={fadeInUp}
+                  title={badge}
+                  id={badge} // Add id for HTML anchor navigation
                   className="relative flex flex-col lg:flex-row gap-8 items-stretch bg-white rounded-2xl shadow-xl p-6 lg:p-10 border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl group"
                 >
                   {/* Badge */}

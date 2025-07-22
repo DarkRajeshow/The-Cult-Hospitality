@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
 
@@ -57,7 +55,7 @@ const CallToAction: React.FC = () => {
             Whether you're planning a stay, celebration, or dining experience, we're here to make it extraordinary.
           </p>
           <motion.form
-            onSubmit={handleEmailSubmit}
+            onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleEmailSubmit(e)}
             className="flex flex-col gap-3 sm:flex-row sm:gap-4 max-w-md mx-auto"
             variants={itemVariants}
             initial="hidden"
@@ -67,7 +65,7 @@ const CallToAction: React.FC = () => {
               type="email"
               placeholder="Enter your email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg rounded-full border-2 border-gray-200 focus:border-amber-400 transition-colors"
               required
             />

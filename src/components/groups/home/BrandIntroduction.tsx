@@ -47,7 +47,7 @@ const BrandIntroduction: React.FC = () => {
                 src="/assets/images/bedroom.png"
                 alt="Luxury hotel interior"
                 className="w-full h-48 sm:h-96 object-cover"
-                onError={(e) => {
+                onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                   (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=Image+Unavailable';
                 }}
               />

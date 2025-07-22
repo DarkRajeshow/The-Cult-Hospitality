@@ -6,12 +6,14 @@ import {
     PlusCircle,
     Edit,
     Eye,
+    type LucideProps,
 } from 'lucide-react';
+import type { ForwardRefExoticComponent, RefAttributes } from 'react';
 
 export interface RouteConfig {
     path: string;
     name: string;
-    icon?: any;
+    icon?: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
     component?: string;
     isProtected?: boolean;
     showInSidebar?: boolean;
