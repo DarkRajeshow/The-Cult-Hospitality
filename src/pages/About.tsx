@@ -9,49 +9,66 @@ import { Shield, Zap, Smile } from 'lucide-react';
 const aboutContent = {
   hero: {
     heading: "About Cult Hospitality",
-    subheading: "We’re redefining luxury stays for the modern Indian traveler.",
-    description: "Cult Hospitality isn’t just about rooms — it’s+ about curated experiences. We’re building a chain of beautifully designed, digitally powered, and culturally rooted stays that offer consistency, comfort, and character across India."
+    subheading: "A new-age hospitality partner for modern hotel owners.",
+    description:
+      "Cult Hospitality is more than just a hospitality brand—we’re a full-service management partner for boutique hotels, cafés, and event spaces in emerging cities like Solapur. We combine localized expertise with tech-driven operations to help you run smoother, earn better, and grow faster."
   },
   mission: {
     title: "Our Mission",
-    description: "We exist to make premium hospitality accessible, aesthetic, and reliable for new-age travelers. Every Cult stay reflects thoughtful design, tech-first convenience, and deep respect for local culture.",
-    highlight: "Where comfort meets culture — that's the Cult experience.",
+    description:
+      "We’re on a mission to empower independent property owners with the systems, support, and brand identity needed to thrive in India’s evolving hospitality landscape.",
+    highlight: "From design to delivery, we manage what matters most—so you can focus on ownership.",
     values: [
-      { icon: Shield, title: "Consistency", description: "Same premium experience across every Cult property" },
-      { icon: Zap, title: "Convenience", description: "Seamless digital check-ins, instant support, zero waiting" },
-      { icon: Smile, title: "Connection", description: "Spaces designed for warmth, community, and local vibes" }
+      {
+        icon: Shield,
+        title: "Consistency",
+        description: "Operational excellence and quality assurance at every guest touchpoint"
+      },
+      {
+        icon: Zap,
+        title: "Convenience",
+        description: "Digital-first tools, automated SOPs, and seamless guest management"
+      },
+      {
+        icon: Smile,
+        title: "Connection",
+        description: "Locally relevant experiences that build loyalty and community"
+      }
     ]
   },
   story: {
     title: "Our Story",
-    content: "Cult Hospitality began with a simple frustration — why is it so hard to find a place that looks amazing, feels premium, and works like magic when you travel in India? We took that frustration and turned it into a vision: a growing network of design-forward, tech-enabled homestays and boutique hotels across Tier-2 and Tier-3 cities.",
-    values: "We’re not building just another chain. We're building a cult — of quality, trust, and unforgettable hospitality."
+    content:
+      "Cult Hospitality was born out of a challenge many property owners face: inconsistent service, operational chaos, and underperforming spaces. With a background in design, tech, and hospitality, we set out to offer something better—a scalable management model for small-format properties in Tier-2 cities.",
+    values:
+      "We're not just managing properties—we're building a standard. A Cult standard that stands for trust, growth, and great experiences."
   },
   highlights: [
     {
       number: "4",
-      title: "Boutique Stays Curated",
-      description: "Carefully selected and designed stays offering comfort, style, and local charm"
+      title: "Properties Managed",
+      description: "From hotels to cafés—each space is uniquely run but centrally optimized"
     },
     {
       number: "100%",
-      title: "Digitally Enabled",
-      description: "From contactless check-ins to real-time support — everything is powered by tech"
+      title: "Tech-Enabled",
+      description: "We run on data, automation, and guest-first digital experiences"
     },
     {
       number: "1",
       title: "City Presence",
-      description: "Currently operating in Solapur, with plans to expand to more cities soon"
+      description: "Deep focus on Solapur, with plans to scale to similar high-potential cities"
     },
     {
       number: "80%",
-      title: "High Guest Retention",
-      description: "Positive reviews and repeat bookings driven by consistency and thoughtful hospitality"
+      title: "Repeat Business Rate",
+      description: "Loyal guests and recurring events due to our consistency and care"
     }
   ],
   cta: {
     heading: "Let's Redefine Hospitality Together",
-    subtext: "Whether you're a traveler, a property owner, or a believer in better stays — join the Cult.",
+    subtext:
+      "Own a property? Let’s talk. We partner with forward-thinking owners to co-create remarkable guest experiences and profitable operations.",
     buttonText: "Partner With Us"
   }
 };

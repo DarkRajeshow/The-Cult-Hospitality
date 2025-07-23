@@ -17,7 +17,18 @@ const itemVariants: Variants = {
   },
 };
 
-const CallToAction: React.FC = () => {
+interface CallToActionContent {
+  badge: string;
+  heading: string[];
+  gradient: string;
+  description: string;
+  inputPlaceholder: string;
+  button: { default: string; submitted: string };
+  error: { empty: string; invalid: string };
+  success: string;
+}
+
+const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -26,12 +37,12 @@ const CallToAction: React.FC = () => {
     e.preventDefault();
     setError(null);
     if (!email) {
-      setError('Please enter your email.');
+      setError(content.error.empty);
       return;
     }
     // Basic email validation
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setError('Please enter a valid email address.');
+      setError(content.error.invalid);
       return;
     }
     setIsSubmitted(true);
@@ -44,16 +55,16 @@ const CallToAction: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-rose-100 to-purple-100" />
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div variants={itemVariants} initial="hidden" animate="visible" className="space-y-6 sm:space-y-8">
-          <Badge className="bg-white/80 text-gray-800 border-gray-200 mb-4 sm:mb-6 text-xs sm:text-base">
-            READY TO EXPERIENCE THE CULT?
-          </Badge>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Let Us Craft Your
-            <span className="bg-gradient-to-r from-amber-600 to-rose-600 bg-clip-text text-transparent"> Perfect Experience</span>
-          </h2>
-          <p className="text-base sm:text-xl text-gray-700 mb-6 sm:mb-12 max-w-2xl mx-auto">
-            Whether you're planning a stay, celebration, or dining experience, we're here to make it extraordinary.
-          </p>
+      <Badge className="bg-white/80 text-gray-800 border-gray-200 mb-4 sm:mb-6 text-xs sm:text-base">
+        {content.badge}
+      </Badge>
+      <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+        {content.heading[0]}
+        <span className={content.gradient}>{content.heading[1]}</span>
+      </h2>
+      <p className="text-base sm:text-xl text-gray-700 mb-6 sm:mb-12 max-w-2xl mx-auto">
+        {content.description}
+      </p>
           <motion.form
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleEmailSubmit(e)}
             className="flex flex-col gap-3 sm:flex-row sm:gap-4 max-w-md mx-auto"
@@ -63,7 +74,7 @@ const CallToAction: React.FC = () => {
           >
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={content.inputPlaceholder}
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg rounded-full border-2 border-gray-200 focus:border-amber-400 transition-colors"
@@ -74,7 +85,7 @@ const CallToAction: React.FC = () => {
               className="bg-gradient-to-r flex items-center from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
               disabled={isSubmitted}
             >
-              {isSubmitted ? 'Thank You!' : 'Join Us'}
+              {isSubmitted ? content.button.submitted : content.button.default}
               {!isSubmitted && <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />}
             </button>
           </motion.form>
@@ -93,7 +104,7 @@ const CallToAction: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-green-600 font-medium"
             >
-              We'll be in touch soon with exclusive offers!
+              {content.success}
             </motion.p>
           )}
         </motion.div>

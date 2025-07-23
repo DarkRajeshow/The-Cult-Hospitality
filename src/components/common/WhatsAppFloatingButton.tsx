@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '917888172579'; // WhatsApp requires country code without +
+const WHATSAPP_NUMBER = '919545406070'; // WhatsApp requires country code without +
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export default function WhatsAppFloatingButton() {

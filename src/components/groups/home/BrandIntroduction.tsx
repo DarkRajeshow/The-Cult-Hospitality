@@ -14,7 +14,16 @@ const itemVariants: Variants = {
   },
 };
 
-const BrandIntroduction: React.FC = () => {
+interface BrandIntroductionContent {
+  badge: string;
+  heading: string[];
+  gradient: string;
+  paragraphs: string[];
+  image: string;
+  imageAlt: string;
+}
+
+const BrandIntroduction: React.FC<{ content: BrandIntroductionContent }> = ({ content }) => {
   return (
     <section className="py-12 sm:py-24 px-2 sm:px-6">
       <div className="max-w-7xl mx-auto">
@@ -22,30 +31,24 @@ const BrandIntroduction: React.FC = () => {
           <motion.div variants={itemVariants} initial="hidden" animate="visible" className="space-y-6 sm:space-y-8">
             <div className="space-y-2 sm:space-y-4">
               <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs sm:text-base">
-                WHO WE ARE
+                {content.badge}
               </Badge>
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Crafting Extraordinary
-                <span className="bg-gradient-to-r from-amber-600 to-rose-600 bg-clip-text text-transparent"> Experiences</span>
+                {content.heading[0]}
+                <span className={content.gradient}>{content.heading[1]}</span>
               </h2>
             </div>
             <div className="space-y-3 sm:space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
-              <p>
-                The Cult Hospitality represents a paradigm shift in luxury hospitality, where every touchpoint is meticulously designed to create emotional connections and lasting memories.
-              </p>
-              <p>
-                Our curated collection spans four distinct verticals, each reflecting our commitment to excellence, innovation, and personalized service that goes beyond traditional hospitality.
-              </p>
-              <p>
-                We believe luxury isn't just about premium amenities—it's about creating transformative experiences that resonate with the soul and inspire the senses.
-              </p>
+              {content.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
           </motion.div>
           <motion.div variants={itemVariants} initial="hidden" animate="visible" className="relative mt-8 lg:mt-0">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/assets/images/bedroom.png"
-                alt="Luxury hotel interior"
+                src={content.image}
+                alt={content.imageAlt}
                 className="w-full h-48 sm:h-96 object-cover"
                 onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                   (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=Image+Unavailable';

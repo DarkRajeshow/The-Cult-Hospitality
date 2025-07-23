@@ -16,7 +16,15 @@ interface EnhancedParticleProps {
   type?: 'default' | 'sparkle' | 'star';
 }
 const EnhancedParticle: React.FC<EnhancedParticleProps> = ({ delay = 0, type = 'default' }) => {
-  const variants: Record<'default' | 'sparkle' | 'star', { className: string; animation: any }> = {
+  type AnimationProps = {
+    opacity?: number[]; 
+    scale?: number[]; 
+    y?: number[]; 
+    x?: number[]; 
+    rotate?: number[];
+  };
+
+  const variants: Record<'default' | 'sparkle' | 'star', { className: string; animation: AnimationProps }> = {
     default: {
       className: "w-1 h-1 bg-amber-400/60 rounded-full",
       animation: {
@@ -190,7 +198,18 @@ const FloatingShapes = () => {
   );
 };
 
-const HeroSection = () => {
+interface HeroContent {
+  location: string;
+  guests: string;
+  heading: string[];
+  subtitle: string;
+  typewriterWords: string[];
+  rating: { value: number; label: string };
+  cta: { label: string; link: string };
+  video: { title: string; description: string };
+}
+
+const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
 
@@ -302,7 +321,7 @@ const HeroSection = () => {
           >
             <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
               <MapPin className="w-4 h-4 text-amber-400" />
-              Solapur's Premier Destination
+              {content.location}
             </div>
             {/* <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
               <Award className="w-4 h-4 text-amber-400" />
@@ -310,7 +329,7 @@ const HeroSection = () => {
             </div> */}
             <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
               <Users className="w-4 h-4 text-amber-400" />
-              10K+ Happy Guests
+              {content.guests}
             </div>
           </motion.div>
 
@@ -335,7 +354,7 @@ const HeroSection = () => {
                 className="block transform-gpu"
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                The Cult
+                {content.heading[0]}
               </motion.span>
               <motion.span
                 initial={{ y: 150, opacity: 0, rotateX: 90 }}
@@ -350,7 +369,7 @@ const HeroSection = () => {
                 className="block bg-gradient-to-r from-amber-300 via-orange-500 to-red-600 bg-clip-text text-transparent transform-gpu filter drop-shadow-2xl"
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                Hospitality
+                {content.heading[1]}
               </motion.span>
             </motion.h1>
           </div>
@@ -363,9 +382,9 @@ const HeroSection = () => {
             className="mb-6 sm:mb-12"
           >
             <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 font-medium mb-4 sm:mb-6 leading-relaxed">
-              Where luxury becomes{" "}
+              {content.subtitle}{" "}
               <TypewriterText
-                words={["extraordinary", "unforgettable", "legendary", "magical", "timeless"]}
+                words={content.typewriterWords}
                 className="text-transparent bg-yellow-400 font-semibold bg-clip-text"
               />
             </p>
@@ -394,7 +413,7 @@ const HeroSection = () => {
                   </motion.div>
                 ))}
               </div>
-              <span className="text-lg font-medium">5.0 Premium Experience</span>
+              <span className="text-lg font-medium">{content.rating.value} {content.rating.label}</span>
               <Sparkles className="w-5 h-5 text-amber-400" />
             </motion.div>
           </motion.div>
@@ -418,9 +437,9 @@ const HeroSection = () => {
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
-              <Link to={"/services"}>
+              <Link to={content.cta.link}>
                 <span className="relative flex items-center gap-3 z-10">
-                  Experience The Cult
+                  {content.cta.label}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Link>
@@ -460,8 +479,8 @@ const HeroSection = () => {
                   >
                     <Play className="w-8 h-8 text-amber-400 ml-1" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold mb-2">Coming Soon</h3>
-                  <p className="text-white/70 text-lg">Our Story Awaits</p>
+                  <h3 className="text-2xl font-bold mb-2">{content.video.title}</h3>
+                  <p className="text-white/70 text-lg">{content.video.description}</p>
                 </div>
               </div>
 

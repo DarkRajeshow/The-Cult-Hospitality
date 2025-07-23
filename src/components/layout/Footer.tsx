@@ -17,7 +17,7 @@ const socialIcons = [
 const navigationLinks = [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
-    { label: 'Services', href: '/services' },
+    { label: 'Our Brands', href: '/brands' },
     { label: 'Contact', href: '/contact' },
 ];
 
@@ -29,7 +29,7 @@ const experiences = [
 ];
 
 const contactInfo = [
-    { label: '+91 78881 72579', icon: Phone },
+    { label: '+91 95454 06070', icon: Phone },
     { label: 'info@thecultstay.com', icon: Mail },
     { label: 'Solapur, Maharashtra', icon: MapPin },
 ];
