@@ -11,7 +11,8 @@ const Navbar = () => {
         { label: 'Home', path: '/' },
         { label: 'About Us', path: '/about' },
         { label: 'Our Brands', path: '/brands' },
-        { label: 'Contact Us', path: '/contact' }
+        { label: 'Our Services', path: '/services' },
+        { label: 'Contact Us', path: '/contact' },
     ];
 
     const location = useLocation();
@@ -46,8 +47,8 @@ const Navbar = () => {
                     <div className={`flex items-center justify-between h-20 sm:h-24 md:h-28 ${isMobileMenuOpen && 'hidden'}`}>
                         {/* Logo Section */}
                         <Link to={'/'} className={`flex items-center`}>
-                            <div className='h-16 sm:h-20 md:h-26'>
-                                <img className='h-full' src="/assets/images/logo.png" alt="" />
+                            <div className='h-16 sm:h-20 md:h-24'>
+                                <img className='h-full' src="/assets/images/logo-h.png" alt="" />
                             </div>
                         </Link>
 
@@ -116,16 +117,16 @@ const Navbar = () => {
                                 <Menu size={24} />
                             )}
                         </button>
-                        
+
                         {/* <div className="flex items-center">
                             <div className='h-20'>
-                                <img className='w-20' src="/assets/images/logo.png" alt="" />
+                                <img className='w-20' src="/assets/images/logo-h.png" alt="" />
                             </div>
                         </div> */}
                         {/* 
                         <Link to={'/'} className={`flex items-center`}>
                             <div className='h-24 sm:h-20 md:h-30'>
-                                <img className='w-24 sm:w-20 md:w-30' src="/assets/images/logo.png" alt="" />
+                                <img className='w-24 sm:w-20 md:w-30' src="/assets/images/logo-h.png" alt="" />
                             </div>
                         </Link> */}
 

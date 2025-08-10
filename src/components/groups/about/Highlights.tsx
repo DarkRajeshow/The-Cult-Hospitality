@@ -24,7 +24,7 @@ const Highlights: React.FC<HighlightsProps> = ({ highlights }) => {
             {highlights.map((highlight, index) => (
               <DirectionAwareHover key={index} className="rounded-lg">
                 <CardSpotlight className="p-4 sm:p-6 text-center h-full">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-600 mb-2">
                     {highlight.number}
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">

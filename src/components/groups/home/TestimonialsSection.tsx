@@ -35,7 +35,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials 
           <Badge className="bg-purple-100 text-purple-800 border-purple-200 mb-4 sm:mb-6 text-xs sm:text-base">
             GUEST EXPERIENCES
           </Badge>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6">
             Stories from Our
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> Guests</span>
           </h2>

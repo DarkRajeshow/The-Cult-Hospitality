@@ -68,7 +68,7 @@ const BinaryPattern = ({ mouseX, mouseY, randomString }: BinaryPatternProps) => 
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-green-500/20 via-blue-500/20 to-purple-500/20 backdrop-blur-sm"></div>
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                     <div className="w-full h-full p-4">
-                        <pre className="text-xs font-mono font-bold text-green-400/80 leading-3 whitespace-pre-wrap break-words animate-pulse w-full h-full">
+                        <pre className="text-xs font-mono font-semibold text-green-400/80 leading-3 whitespace-pre-wrap break-words animate-pulse w-full h-full">
                             {randomString}
                         </pre>
                     </div>

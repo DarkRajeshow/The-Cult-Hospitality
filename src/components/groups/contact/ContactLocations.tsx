@@ -22,7 +22,7 @@ type Location = {
   type: string;
   address: string;
   email: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   iconBg: string;
   iconColor: string;
   mapUrl: string;
@@ -66,7 +66,7 @@ export default function ContactLocations({ locations }: ContactLocationsProps) {
                   <div>
                     <div className="flex items-center space-x-4 mb-4">
                       <div className={`w-14 h-14 ${location.iconBg} rounded-lg flex items-center justify-center`}>
-                        <IconComponent className={`w-7 h-7 ${location.iconColor}`} />
+                        <IconComponent className="w-7 h-7" />
                       </div>
                       <div>
                         <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">

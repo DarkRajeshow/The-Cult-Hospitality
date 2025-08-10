@@ -3,51 +3,120 @@ import AboutHero from '@/components/groups/about/AboutHero';
 import MissionSection from '@/components/groups/about/MissionSection';
 import StorySection from '@/components/groups/about/StorySection';
 import Highlights from '@/components/groups/about/Highlights';
-import { Shield, Zap, Smile } from 'lucide-react';
+import TeamSection from '@/components/groups/about/TeamSection';
+import { Shield, Zap, Award, Heart, Users, Leaf, Target, Star, TrendingUp } from 'lucide-react';
 
 // Content configuration object
 const aboutContent = {
   hero: {
-    heading: "About Cult Hospitality",
-    subheading: "A new-age hospitality partner for modern hotel owners.",
+    heading: "About The Cult Hospitality",
+    subheading: "A premier hospitality group dedicated to redefining industry standards.",
     description:
-      "Cult Hospitality is more than just a hospitality brand—we’re a full-service management partner for boutique hotels, cafés, and event spaces in emerging cities like Solapur. We combine localized expertise with tech-driven operations to help you run smoother, earn better, and grow faster."
+      "The Cult Hospitality is a premier hospitality group dedicated to redefining industry standards with unparalleled experiences and personalized service across a diverse array of brands. Our mission is to offer exceptional stays, dining, and event experiences, ensuring every guest enjoys world-class hospitality."
   },
   mission: {
     title: "Our Mission",
     description:
-      "We’re on a mission to empower independent property owners with the systems, support, and brand identity needed to thrive in India’s evolving hospitality landscape.",
+      "We're on a mission to offer exceptional stays, dining, and event experiences, ensuring every guest enjoys world-class hospitality while empowering property owners with professional management solutions.",
     highlight: "From design to delivery, we manage what matters most—so you can focus on ownership.",
     values: [
       {
-        icon: Shield,
-        title: "Consistency",
-        description: "Operational excellence and quality assurance at every guest touchpoint"
+        icon: Award,
+        title: "Excellence",
+        description: "Striving for perfection in all aspects of hospitality"
       },
       {
         icon: Zap,
-        title: "Convenience",
-        description: "Digital-first tools, automated SOPs, and seamless guest management"
+        title: "Innovation",
+        description: "Continuously enhancing guest experiences through creativity"
       },
       {
-        icon: Smile,
-        title: "Connection",
-        description: "Locally relevant experiences that build loyalty and community"
-      }
+        icon: Shield,
+        title: "Integrity",
+        description: "Operating with honesty and transparency"
+      },
+      {
+        icon: Heart,
+        title: "Customer-Centricity",
+        description: "Prioritizing guest satisfaction and personalization"
+      },
+      {
+        icon: Leaf,
+        title: "Sustainability",
+        description: "Committed to eco-friendly practices and responsible sourcing"
+      },
+      {
+        icon: Users,
+        title: "Teamwork",
+        description: "Encouraging collaboration and inclusivity"
+      },
+      {
+        icon: Target,
+        title: "Community",
+        description: "Supporting local businesses and initiatives"
+      },
+      {
+        icon: Star,
+        title: "Respect",
+        description: "Treating everyone with dignity and fairness"
+      },
+      {
+        icon: TrendingUp,
+        title: "Passion",
+        description: "Infusing dedication and enthusiasm into our work"
+      },
+      // {
+      //   icon: Shield,
+      //   title: "Quality",
+      //   description: "Ensuring the highest service standards"
+      // },
+      // {
+      //   icon: Zap,
+      //   title: "Adaptability",
+      //   description: "Responding proactively to industry trends and guest needs"
+      // }
     ]
   },
   story: {
     title: "Our Story",
     content:
-      "Cult Hospitality was born out of a challenge many property owners face: inconsistent service, operational chaos, and underperforming spaces. With a background in design, tech, and hospitality, we set out to offer something better—a scalable management model for small-format properties in Tier-2 cities.",
+      "The Cult Hospitality was born out of a vision to transform the hospitality landscape in emerging cities. With a deep understanding of both guest expectations and property owner challenges, we set out to create a comprehensive solution that bridges the gap between luxury experiences and operational efficiency.",
     values:
       "We're not just managing properties—we're building a standard. A Cult standard that stands for trust, growth, and great experiences."
+  },
+  team: {
+    title: "Our Team",
+    description: "Our team consists of industry experts committed to delivering excellence:",
+    members: [
+      {
+        name: "Sahil Bhandari",
+        role: "Co-Founder & Director",
+        description: "Leads with extensive hospitality experience, ensuring innovation and guest satisfaction."
+      },
+      {
+        name: "Siddeshwar Jokare",
+        role: "Co-Founder & Director", 
+        description: "Drives strategic growth and operational excellence across all brands."
+      },
+      {
+        name: "Mahesh Bhandari",
+        role: "Mentor",
+        description: "Provides strategic vision and invaluable guidance."
+      }
+    ],
+    departments: [
+      "Experienced Hoteliers – Ensure a seamless and luxurious guest experience",
+      "Event Planners & Coordinators – Bring creativity and precision to every event",
+      "Talented Chefs & Culinary Experts – Craft exceptional and innovative dishes",
+      "Customer Service Professionals – Ensure warm and personalized guest experiences",
+      "Support Staff – Maintain the highest standards of cleanliness, safety, and comfort"
+    ]
   },
   highlights: [
     {
       number: "4",
-      title: "Properties Managed",
-      description: "From hotels to cafés—each space is uniquely run but centrally optimized"
+      title: "Brands Managed",
+      description: "From hotels to cafés—each brand is uniquely positioned but centrally optimized"
     },
     {
       number: "100%",
@@ -60,19 +129,18 @@ const aboutContent = {
       description: "Deep focus on Solapur, with plans to scale to similar high-potential cities"
     },
     {
-      number: "80%",
-      title: "Repeat Business Rate",
-      description: "Loyal guests and recurring events due to our consistency and care"
+      number: "95.5%",
+      title: "Success Rate",
+      description: "Consistent guest satisfaction and operational excellence"
     }
   ],
   cta: {
     heading: "Let's Redefine Hospitality Together",
     subtext:
-      "Own a property? Let’s talk. We partner with forward-thinking owners to co-create remarkable guest experiences and profitable operations.",
+      "Own a property? Let's talk. We partner with forward-thinking owners to co-create remarkable guest experiences and profitable operations.",
     buttonText: "Partner With Us"
   }
 };
-
 
 const AboutPage: React.FC = () => {
   return (
@@ -88,6 +156,12 @@ const AboutPage: React.FC = () => {
         title={aboutContent.story.title}
         content={aboutContent.story.content}
         values={aboutContent.story.values}
+      />
+      <TeamSection
+        title={aboutContent.team.title}
+        description={aboutContent.team.description}
+        members={aboutContent.team.members}
+        departments={aboutContent.team.departments}
       />
       <Highlights highlights={aboutContent.highlights} />
       {/* <AboutCTA cta={aboutContent.cta} /> */}

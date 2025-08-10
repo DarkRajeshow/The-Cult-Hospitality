@@ -28,42 +28,42 @@ type ContactHeroProps = {
 export default function ContactHero({ hero }: ContactHeroProps) {
   return (
     <motion.section
-      className="py-20 md:py-28 px-4 bg-gradient-to-b from-gray-50 to-white"
+      className="py-12 sm:py-16 lg:py-20 xl:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white"
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
     >
       <div className="max-w-6xl mx-auto text-center">
         <motion.div variants={fadeInUp}>
-          <h1 className="text-3xl sm:text-4xl md:text-7xl max-w-4xl mx-auto text-black mb-6 md:mb-8 font-medium text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto text-black mb-4 sm:mb-6 lg:mb-8 font-medium text-center leading-tight">
             {hero.heading}
           </h1>
-          <p className="text-base sm:text-lg text-gray-700 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed text-center">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-700 mb-6 sm:mb-8 lg:mb-12 max-w-2xl mx-auto leading-relaxed text-center">
             {hero.subheading}
           </p>
         </motion.div>
         <motion.div
           variants={fadeInUp}
-          className="flex flex-col sm:flex-row gap-12 justify-center items-center my-20 font-medium"
+          className="flex flex-col sm:flex-row gap-8 sm:gap-12 justify-center items-center my-12 sm:my-16 lg:my-20 font-medium"
         >
           <div className="flex items-center space-x-3">
-            <div className="size-16 sm:size-20 bg-blue-100 rounded-full flex items-center justify-center">
-              <Phone className="size-6 sm:size-7 text-blue-600" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-100 rounded-full flex items-center justify-center">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600" />
             </div>
             <div className="text-left">
-              <p className="text-lg sm:text-xl text-black/70 tracking-wide">Call Us</p>
-              <a href={`tel:${hero.phone}`} className="text-xl sm:text-2xl font-medium text-gray-900">
+              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-black/70 tracking-wide">Call Us</p>
+              <a href={`tel:${hero.phone}`} className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
                 {hero.phone}
               </a>
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <div className="size-16 sm:size-20 bg-purple-100 rounded-full flex items-center justify-center">
-              <Mail className="size-6 sm:size-7 text-purple-600" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-purple-100 rounded-full flex items-center justify-center">
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-purple-600" />
             </div>
             <div className="text-left">
-              <p className="text-lg sm:text-xl text-black/70 tracking-wide">Email Us</p>
-              <a href={`mailto:${hero.email}`} className="text-xl sm:text-2xl font-medium text-gray-900">
+              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-black/70 tracking-wide">Email Us</p>
+              <a href={`mailto:${hero.email}`} className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
                 {hero.email}
               </a>
             </div>

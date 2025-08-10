@@ -7,12 +7,13 @@ import {
   Building,
   Coffee,
   Wheat,
+  Leaf,
+  Sprout,
 } from 'lucide-react';
 
 import HeroSection from '@/components/groups/home/HeroSection';
 import BrandIntroduction from '@/components/groups/home/BrandIntroduction';
 import WhyChooseUs from '@/components/groups/home/WhyChooseUs';
-import TestimonialsSection from '@/components/groups/home/TestimonialsSection';
 import CallToAction from '@/components/groups/home/CallToAction';
 import OurOfferings from '@/components/groups/home/OurOfferings';
 
@@ -21,7 +22,6 @@ import OurOfferings from '@/components/groups/home/OurOfferings';
 // Centralized Home page content
 const content = {
   hero: {
-    location: "Solapur, Maharashtra",
     guests: "10K+ Delighted Guests",
     heading: ["The Cult", "Hospitality"],
     subtitle: "Where hospitality transforms into",
@@ -32,7 +32,7 @@ const content = {
     },
     cta: {
       label: "Explore Our Properties",
-      link: "/services"
+      link: "/brands"
     },
     video: {
       title: "Our Story",
@@ -45,9 +45,9 @@ const content = {
     heading: ["Creating Boutique Hospitality", " That Leaves a Mark"],
     gradient: "bg-gradient-to-r from-amber-600 to-rose-600 bg-clip-text text-transparent",
     paragraphs: [
-      "The Cult Hospitality is a full-service hospitality firm redefining how boutique properties operate, serve, and scale. Based in Solapur, we manage everything from boutique hotels and event spaces to cafés and wellness retail — crafting guest experiences that feel personal, immersive, and unforgettable.",
+      "The Cult Hospitality is a premier hospitality group dedicated to redefining industry standards with unparalleled experiences and personalized service across a diverse array of brands. Our mission is to offer exceptional stays, dining, and event experiences, ensuring every guest enjoys world-class hospitality.",
       "Whether you're a traveler seeking soulful stays or a property owner seeking professional hotel management, The Cult is where authenticity meets excellence.",
-      "With every brand we build, we don’t just provide hospitality — we shape culture, create connections, and deliver results that go beyond rooms and rates."
+      "With every brand we build, we don't just provide hospitality — we shape culture, create connections, and deliver results that go beyond rooms and rates."
     ],
     image: "/assets/images/bedroom.png",
     imageAlt: "Cult Hospitality Signature Room"
@@ -71,14 +71,6 @@ const content = {
       gradient: "from-rose-100 to-rose-50"
     },
     {
-      id: 3,
-      title: "The Cult Kitchen",
-      description: "Elevated dining with seasonal menus and conscious cooking.",
-      icon: ChefHat,
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
-      gradient: "from-emerald-100 to-emerald-50"
-    },
-    {
       id: 4,
       title: "The Cult Café & Bistro",
       description: "Charming spaces for coffee, calm, and conversations.",
@@ -87,15 +79,97 @@ const content = {
       gradient: "from-blue-100 to-blue-50"
     },
     {
+      id: 3,
+      title: "Cloud Kitchens",
+      description: "A new era of delivery-first dining, powered by The Cult Hospitality.",
+      icon: ChefHat,
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
+      gradient: "from-emerald-100 to-emerald-50",
+      subOfferings: [
+        {
+          id: 3.1,
+          title: "The Cult Kitchen",
+          description: "Elevated dining with seasonal menus and conscious cooking.",
+          icon: ChefHat,
+          image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
+          gradient: "from-emerald-100 to-emerald-50"
+        },
+        {
+          id: 3.2,
+          title: "The Tali Spot",
+          description: "Authentic, home-style Indian thalis delivered fresh to your door.",
+          icon: Wheat,
+          image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop",
+          gradient: "from-yellow-100 to-yellow-50"
+        }
+      ]
+    },
+    {
       id: 5,
-      title: "Cult Nuts and Millets",
-      description: "Premium nuts, millets, and natural foods for a better lifestyle.",
-      icon: Wheat,
-      image: "/assets/images/cult-nuts.png",
-      gradient: "from-yellow-100 to-yellow-50"
+      title: "Other Initiatives by Cult",
+      description: "Expanding our impact through sustainable and wellness-focused ventures.",
+      icon: Leaf,
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+      gradient: "from-green-100 to-green-50",
+      subOfferings: [
+        {
+          id: 5.1,
+          title: "Cult Organics",
+          description: "Premium organic products for a healthier lifestyle.",
+          icon: Wheat,
+          image: "/assets/images/cult-nuts.png",
+          gradient: "from-yellow-100 to-yellow-50",
+          subOfferings: [
+            {
+              id: 5.11,
+              title: "Nuts & Millets",
+              description: "Premium quality nuts and ancient millets sourced from the finest locations for modern nutrition and wellness.",
+              icon: Wheat,
+              image: "/assets/images/cult-nuts.png",
+              gradient: "from-amber-100 to-yellow-50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: "Social Activities",
+      description: "Making a positive impact on communities and the environment.",
+      icon: Sprout,
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+      gradient: "from-teal-100 to-teal-50",
+      subOfferings: [
+        {
+          id: 6.1,
+          title: "Cult Foundation",
+          description: "Community-driven initiatives for sustainable development.",
+          icon: Heart,
+          image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+          gradient: "from-pink-100 to-pink-50",
+          subOfferings: [
+            {
+              id: 6.11,
+              title: "Tree Plantation",
+              description: "Greening initiatives for a sustainable future.",
+              icon: Sprout,
+              image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+              gradient: "from-green-100 to-green-50"
+            },
+            {
+              id: 6.12,
+              title: "Seed Balls",
+              description: "Innovative approach to reforestation and environmental conservation.",
+              icon: Leaf,
+              image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+              gradient: "from-emerald-100 to-emerald-50"
+            }
+          ]
+        }
+      ]
     }
   ],
-  
+
   features: [
     {
       icon: Star,
@@ -116,7 +190,7 @@ const content = {
 
   testimonials: [
     {
-      quote: "Spacious rooms, EV charging, and Amar’s warm breakfast service made our stay super comfortable and memorable. Highly recommended for families!",
+      quote: "Spacious rooms, EV charging, and Amar's warm breakfast service made our stay super comfortable and memorable. Highly recommended for families!",
       name: "Adithya Bhat",
       designation: "Family Traveler",
       src: "/assets/images/aditya.png"
@@ -128,7 +202,7 @@ const content = {
       src: "/assets/images/shubham.png"
     },
     {
-      quote: "Impeccably clean rooms, stunning design, and exceptional hospitality from Shrikant and Kiran. The breakfast was a standout! Can’t wait to return!",
+      quote: "Impeccably clean rooms, stunning design, and exceptional hospitality from Shrikant and Kiran. The breakfast was a standout! Can't wait to return!",
       name: "Naresh Mhaske",
       designation: "Leisure Guest",
       src: "/assets/images/naresh.png"
@@ -161,7 +235,7 @@ const Home = () => {
       <BrandIntroduction content={content.brandIntroduction} />
       <OurOfferings offerings={content.offerings} />
       <WhyChooseUs features={content.features} />
-      <TestimonialsSection testimonials={content.testimonials} />
+      {/* <TestimonialsSection testimonials={content.testimonials} /> */}
       <CallToAction content={content.callToAction} />
     </div>
   );

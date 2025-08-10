@@ -10,11 +10,11 @@ interface AppLayoutProps {
 
 export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   return (
-    <div className="h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
-      <div>
+      <main className="flex-1 w-full">
         {children}
-      </div>
+      </main>
       <Footer />
       <WhatsAppFloatingButton />
     </div>

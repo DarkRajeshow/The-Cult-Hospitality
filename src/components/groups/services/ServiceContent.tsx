@@ -21,7 +21,7 @@ export const servicesContent = {
               </svg>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-800">Design-Led Boutique Stays</h3>
+              <h3 className="text-xl font-semibold text-neutral-800">Design-Led Boutique Stays</h3>
               <p className="text-sm text-neutral-600">Premium stays for the experience-driven guest</p>
             </div>
           </div>
@@ -51,7 +51,7 @@ export const servicesContent = {
               </svg>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-800">Banquet Operations That Deliver</h3>
+              <h3 className="text-xl font-semibold text-neutral-800">Banquet Operations That Deliver</h3>
               <p className="text-sm text-neutral-600">High-margin, fully managed event spaces</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export const servicesContent = {
               </svg>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-800">Smart Kitchens, Strong Margins</h3>
+              <h3 className="text-xl font-semibold text-neutral-800">Smart Kitchens, Strong Margins</h3>
               <p className="text-sm text-neutral-600">Health-forward, delivery-ready menus</p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export const servicesContent = {
               </svg>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-800">Cafe Models for Urban India</h3>
+              <h3 className="text-xl font-semibold text-neutral-800">Cafe Models for Urban India</h3>
               <p className="text-sm text-neutral-600">Scalable formats with high retention</p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export const servicesContent = {
               </svg>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-800">Healthy & Organic Farming Outlet</h3>
+              <h3 className="text-xl font-semibold text-neutral-800">Healthy & Organic Farming Outlet</h3>
               <p className="text-sm text-neutral-600">Premium nuts, millets, and natural foods</p>
             </div>
           </div>
@@ -174,8 +174,8 @@ export const servicesContent = {
 
   cta: {
     heading: "Ready to Unlock Your Property's Potential with Cult?",
-    subtext: "Let’s co-create hospitality spaces that earn trust, drive retention, and build legacy.",
-    phone: "+91 9545406070",
-    email: "info@culthospitality.com"
+    subtext: "Let's co-create hospitality spaces that earn trust, drive retention, and build legacy.",
+    phone: "+91 72830 72930",
+    email: "partnerships@theculthospitality.com"
   }
 };

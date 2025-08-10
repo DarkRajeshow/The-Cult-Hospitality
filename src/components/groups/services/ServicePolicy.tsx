@@ -9,7 +9,7 @@ const ServicePolicy = ({ policy }: { policy: { mainHeading: string; trustWords: 
         <h2 className="text-3xl font-semibold text-slate-800 mb-6">
           {policy.mainHeading}
         </h2>
-        <div className="text-4xl md:text-6xl font-bold text-amber-600 mb-6">
+        <div className="text-4xl md:text-6xl font-semibold text-amber-600 mb-6">
           Excellence & Passion
         </div>
       </div>

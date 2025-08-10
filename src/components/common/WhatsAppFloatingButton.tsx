@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '919545406070'; // WhatsApp requires country code without +
+const WHATSAPP_NUMBER = '917283072930'; // WhatsApp requires country code without +
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export default function WhatsAppFloatingButton() {
@@ -8,15 +8,14 @@ export default function WhatsAppFloatingButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed z-50 bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-colors duration-200"
+      className="fixed z-50 bottom-4 sm:bottom-6 right-4 sm:right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-3 sm:p-4 flex items-center justify-center transition-all duration-200 hover:scale-110"
       style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}
     >
-      {/* WhatsApp SVG Icon from Contact.tsx */}
+      {/* WhatsApp SVG Icon */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
-        width={28}
-        height={28}
+        className="w-6 h-6 sm:w-7 sm:h-7"
         aria-hidden="true"
         focusable="false"
       >

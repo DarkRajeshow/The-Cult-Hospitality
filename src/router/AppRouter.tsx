@@ -6,6 +6,7 @@ import Home from '@/pages/Home';
 import Services from '@/pages/Services';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
+import Brands from '@/pages/Brands';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -19,7 +20,8 @@ export const AppRouter: React.FC = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/brands" element={<Services />} />
+                <Route path="/brands" element={<Brands />} />
+                <Route path="/services" element={<Services />} />
               </Routes>
             </AppLayout>
           }

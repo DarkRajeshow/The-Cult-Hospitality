@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { motion, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import {
   Star,
-  MapPin,
   Play,
   ArrowRight,
   Sparkles,
@@ -199,7 +198,6 @@ const FloatingShapes = () => {
 };
 
 interface HeroContent {
-  location: string;
   guests: string;
   heading: string[];
   subtitle: string;
@@ -257,15 +255,6 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
           }}
         />
 
-        {/* Secondary Background for Depth */}
-        {/* <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: `url('/assets/images/bedroom.png')`
-            // No parallax y transform
-          }}
-        /> */}
-
         {/* Enhanced Gradient Overlays */}
         <motion.div
           style={{ opacity: 1 }}
@@ -309,37 +298,29 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
           rotateX: useTransform(springY, [-20, 20], [5, -5]),
           rotateY: useTransform(springX, [-20, 20], [-5, 5])
         }}
-        className="relative z-20 h-full flex items-center justify-center px-2 sm:px-6"
+        className="relative z-20 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8"
       >
-        <div className="text-center max-w-2xl sm:max-w-6xl mx-auto perspective-1000">
+        <div className="text-center max-w-2xl sm:max-w-4xl lg:max-w-6xl mx-auto perspective-1000">
           {/* Enhanced Location Badge with Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.8 }}
             animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.1, type: "spring", stiffness: 200 }}
-            className="mb-4 sm:mb-8 flex flex-wrap justify-center gap-2 sm:gap-4"
+            className="mb-4 sm:mb-6 lg:mb-8 flex flex-wrap justify-center gap-2 sm:gap-4"
           >
-            <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-amber-400" />
-              {content.location}
-            </div>
-            {/* <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
-              <Award className="w-4 h-4 text-amber-400" />
-              Award Winning Service
-            </div> */}
-            <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-6 py-3 rounded-full text-sm flex items-center gap-2">
-              <Users className="w-4 h-4 text-amber-400" />
+            <div className="bg-white/10 text-white border border-amber-400/30 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base flex items-center gap-2">
+              <Users className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-400" />
               {content.guests}
             </div>
           </motion.div>
 
           {/* Enhanced Main Heading with 3D Effect */}
-          <div className="mb-4 sm:mb-8 perspective-1000">
+          <div className="mb-4 sm:mb-6 lg:mb-8 perspective-1000">
             <motion.h1
               initial={{ opacity: 0 }}
               animate={isLoaded ? { opacity: 1 } : {}}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-3xl xs:text-4xl sm:text-6xl md:text-8xl font-semibold text-white mb-2 sm:mb-4 leading-tight sm:leading-none tracking-tight"
+              className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white mb-2 sm:mb-4 leading-tight sm:leading-none tracking-tight"
             >
               <motion.span
                 initial={{ y: 150, opacity: 0, rotateX: 90 }}
@@ -379,9 +360,9 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
             initial={{ opacity: 0, y: 40 }}
             animate={isLoaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 1.2 }}
-            className="mb-6 sm:mb-12"
+            className="mb-6 sm:mb-8 lg:mb-12"
           >
-            <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 font-medium mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/95 font-medium mb-4 sm:mb-6 leading-relaxed">
               {content.subtitle}{" "}
               <TypewriterText
                 words={content.typewriterWords}
@@ -391,7 +372,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
 
             {/* Enhanced Rating Display */}
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 text-white/80 mb-4"
+              className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-white/80 mb-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 1.5 }}
@@ -409,12 +390,12 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
                       stiffness: 200
                     }}
                   >
-                    <Star className="w-6 h-6 fill-amber-400 text-amber-400 filter drop-shadow-lg" />
+                    <Star className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 fill-amber-400 text-amber-400 filter drop-shadow-lg" />
                   </motion.div>
                 ))}
               </div>
-              <span className="text-lg font-medium">{content.rating.value} {content.rating.label}</span>
-              <Sparkles className="w-5 h-5 text-amber-400" />
+              <span className="text-sm sm:text-base lg:text-lg font-medium">{content.rating.value} {content.rating.label}</span>
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
             </motion.div>
           </motion.div>
 
@@ -432,15 +413,15 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
                 y: -2
               }}
               whileTap={{ scale: 0.98 }}
-              className="relative bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-full text-base sm:text-lg font-semibold overflow-hidden group transition-all duration-300"
+              className="relative bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full text-sm sm:text-base lg:text-lg font-semibold overflow-hidden group transition-all duration-300"
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
               <Link to={content.cta.link}>
-                <span className="relative flex items-center gap-3 z-10">
+                <span className="relative flex items-center gap-2 sm:gap-3 z-10">
                   {content.cta.label}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Link>
               <motion.div
@@ -451,7 +432,6 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
         </div>
       </motion.div>
 
-
       {/* Enhanced Video Modal */}
       <AnimatePresence>
         {showVideo && (
@@ -459,7 +439,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-6"
+            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-6"
             onClick={() => setShowVideo(false)}
           >
             <motion.div
@@ -467,7 +447,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
               animate={{ scale: 1, opacity: 1, rotateX: 0 }}
               exit={{ scale: 0.7, opacity: 0, rotateX: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative max-w-5xl w-full aspect-video bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl"
+              className="relative max-w-4xl sm:max-w-5xl w-full aspect-video bg-gradient-to-br from-gray-900 to-black rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="absolute inset-0 flex items-center justify-center text-white">
@@ -475,12 +455,12 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                    className="w-20 h-20 mx-auto mb-6 rounded-full border-4 border-amber-400/30 border-t-amber-400 flex items-center justify-center"
+                    className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full border-4 border-amber-400/30 border-t-amber-400 flex items-center justify-center"
                   >
-                    <Play className="w-8 h-8 text-amber-400 ml-1" />
+                    <Play className="w-6 h-6 sm:w-8 sm:h-8 text-amber-400 ml-1" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold mb-2">{content.video.title}</h3>
-                  <p className="text-white/70 text-lg">{content.video.description}</p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2">{content.video.title}</h3>
+                  <p className="text-white/70 text-sm sm:text-base lg:text-lg">{content.video.description}</p>
                 </div>
               </div>
 
@@ -488,7 +468,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setShowVideo(false)}
-                className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white flex items-center justify-center text-xl font-medium transition-all duration-200"
+                className="absolute top-4 sm:top-6 right-4 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white flex items-center justify-center text-lg sm:text-xl font-medium transition-all duration-200"
               >
                 ×
               </motion.button>

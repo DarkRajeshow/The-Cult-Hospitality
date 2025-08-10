@@ -51,20 +51,20 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
   };
 
   return (
-    <section className="py-12 sm:py-24 px-2 sm:px-6 relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-rose-100 to-purple-100" />
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div variants={itemVariants} initial="hidden" animate="visible" className="space-y-6 sm:space-y-8">
-      <Badge className="bg-white/80 text-gray-800 border-gray-200 mb-4 sm:mb-6 text-xs sm:text-base">
-        {content.badge}
-      </Badge>
-      <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-        {content.heading[0]}
-        <span className={content.gradient}>{content.heading[1]}</span>
-      </h2>
-      <p className="text-base sm:text-xl text-gray-700 mb-6 sm:mb-12 max-w-2xl mx-auto">
-        {content.description}
-      </p>
+        <motion.div variants={itemVariants} initial="hidden" animate="visible" className="space-y-4 sm:space-y-6 lg:space-y-8">
+          <Badge className="bg-white/80 text-gray-800 border-gray-200 mb-4 sm:mb-6 text-xs sm:text-sm lg:text-base px-3 sm:px-4 py-1 sm:py-2">
+            {content.badge}
+          </Badge>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6">
+            {content.heading[0]}
+            <span className={content.gradient}>{content.heading[1]}</span>
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-700 mb-6 sm:mb-8 lg:mb-12 max-w-2xl mx-auto">
+            {content.description}
+          </p>
           <motion.form
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleEmailSubmit(e)}
             className="flex flex-col gap-3 sm:flex-row sm:gap-4 max-w-md mx-auto"
@@ -77,12 +77,12 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
               placeholder={content.inputPlaceholder}
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg rounded-full border-2 border-gray-200 focus:border-amber-400 transition-colors"
+              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base lg:text-lg rounded-full border-2 border-amber-500 focus:border-amber-600 transition-colors"
               required
             />
             <button
               type="submit"
-              className="bg-gradient-to-r flex items-center from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-gradient-to-r flex items-center justify-center from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
               disabled={isSubmitted}
             >
               {isSubmitted ? content.button.submitted : content.button.default}
@@ -93,7 +93,7 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-red-600 font-medium"
+              className="text-red-600 font-medium text-sm sm:text-base"
             >
               {error}
             </motion.p>
@@ -102,7 +102,7 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-green-600 font-medium"
+              className="text-green-600 font-medium text-sm sm:text-base"
             >
               {content.success}
             </motion.p>

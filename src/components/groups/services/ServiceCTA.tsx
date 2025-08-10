@@ -51,7 +51,7 @@ const ServiceCTA = ({ cta }: { cta: { heading: string; subtext: string; phone: s
             </div>
             <div>
               <div className="text-sm text-slate-500">WhatsApp</div>
-              <div className="font-medium">+91 9545406070</div>
+              <div className="font-medium">+91 72830 72930</div>
             </div>
           </div>
           <div className="flex items-center justify-center md:justify-start gap-3 text-slate-600">

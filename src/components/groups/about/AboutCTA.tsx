@@ -37,7 +37,7 @@ const AboutCTA: React.FC<AboutCTAProps> = ({ cta }) => {
     <div className="py-12 md:py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-6">
             {cta.heading}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
