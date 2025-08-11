@@ -320,10 +320,10 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
               initial={{ opacity: 0 }}
               animate={isLoaded ? { opacity: 1 } : {}}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white mb-2 sm:mb-4 leading-tight sm:leading-none tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white mb-2 sm:mb-4 leading-tight sm:leading-none tracking-tight"
             >
               <motion.span
-                initial={{ y: 150, opacity: 0, rotateX: 90 }}
+                initial={{ y: 150, opacity: 0 }}
                 animate={isLoaded ? { y: 0, opacity: 1, rotateX: 0 } : {}}
                 transition={{
                   duration: 1.2,
@@ -338,7 +338,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
                 {content.heading[0]}
               </motion.span>
               <motion.span
-                initial={{ y: 150, opacity: 0, rotateX: 90 }}
+                initial={{ y: 150, opacity: 0 }}
                 animate={isLoaded ? { y: 0, opacity: 1, rotateX: 0 } : {}}
                 transition={{
                   duration: 1.2,

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   Send,
   CheckCircle,
   AlertCircle
@@ -58,19 +58,35 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
     setSubmitStatus('idle');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        propertyType: '',
-        propertyLocation: '',
-        message: ''
+      const form = e.target as HTMLFormElement;
+      const formDataObj = new FormData(form);
+
+      const response = await fetch('https://formspree.io/f/xdkdyzqj', {
+        method: 'POST',
+        body: formDataObj,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
+
+      console.log(response)
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          propertyType: '',
+          propertyLocation: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -111,7 +127,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                 <p className="text-gray-600 mb-8">
                   Ready to transform your property with The Cult Hospitality? Get in touch with our partnership team.
                 </p>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
@@ -122,7 +138,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                       <p className="text-gray-600">{email}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                       <Phone className="w-6 h-6 text-green-600" />
@@ -132,7 +148,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                       <p className="text-gray-600">{phone}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
                       <MapPin className="w-6 h-6 text-purple-600" />
@@ -179,7 +195,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Partnership Inquiry Form
                 </h3>
-                
+
                 {submitStatus === 'success' && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -188,7 +204,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                   >
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-green-800 font-medium">Thank you! We'll get back to you soon.</span>
+                      <span className="text-green-800 font-medium">Thank you! We'll get back to you within 24 hours.</span>
                     </div>
                   </motion.div>
                 )}
@@ -201,12 +217,17 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                   >
                     <div className="flex items-center space-x-2">
                       <AlertCircle className="w-5 h-5 text-red-500" />
-                      <span className="text-red-800 font-medium">Something went wrong. Please try again.</span>
+                      <span className="text-red-800 font-medium">Something went wrong. Please try again or contact us directly.</span>
                     </div>
                   </motion.div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  // action="https://formspree.io/f/xdkdyzqj"
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="name">Full Name *</Label>
@@ -217,7 +238,6 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        
                       />
                     </div>
                     <div>
@@ -229,7 +249,6 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        
                       />
                     </div>
                   </div>
@@ -244,7 +263,6 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        
                       />
                     </div>
                     <div>
@@ -255,7 +273,6 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                         type="text"
                         value={formData.company}
                         onChange={handleInputChange}
-                        
                       />
                     </div>
                   </div>
@@ -286,7 +303,6 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                         placeholder="City, State"
                         value={formData.propertyLocation}
                         onChange={handleInputChange}
-                        
                       />
                     </div>
                   </div>
@@ -301,7 +317,6 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ heading, subtext, phone, emai
                       placeholder="Describe your property, requirements, and what you're looking to achieve..."
                       value={formData.message}
                       onChange={handleInputChange}
-                      
                     />
                   </div>
 

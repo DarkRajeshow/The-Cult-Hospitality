@@ -77,7 +77,7 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
               placeholder={content.inputPlaceholder}
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base lg:text-lg rounded-full border-2 border-amber-500 focus:border-amber-600 transition-colors"
+              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base lg:text-lg rounded-full border-2 border-pink-300 focus:border-amber-600 transition-colors"
               required
             />
             <button
