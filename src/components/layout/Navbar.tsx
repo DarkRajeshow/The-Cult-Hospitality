@@ -11,8 +11,9 @@ const Navbar = () => {
         { label: 'Home', path: '/' },
         { label: 'About Us', path: '/about' },
         { label: 'Our Brands', path: '/brands' },
-        { label: 'Our Services', path: '/services' },
+        { label: 'Services', path: '/services' },
         { label: 'Contact Us', path: '/contact' },
+        { label: 'Careers', path: '/careers' },
     ];
 
     const location = useLocation();

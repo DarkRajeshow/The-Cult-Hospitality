@@ -16,13 +16,14 @@ const logo = {
 
 const navigationLinks = [
     { label: 'Home', href: '/' },
-    { label: 'About Us', href: '/about' },
+    // { label: 'About Us', href: '/about' },
     { label: 'Our Brands', href: '/brands' },
     { label: 'Services', href: '/services' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Careers', href: '/careers' },
 ];
 
-const experiences = [
+const experiences = [   
     { label: 'The Cult Stay', icon: Building, href: '/brands' },
     { label: 'The Cult Banquet', icon: Calendar, href: '/brands' },
     { label: 'The Cults Kitchen', icon: ChefHat, href: '/brands' },
