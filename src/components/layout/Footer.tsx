@@ -32,7 +32,7 @@ const experiences = [
 
 const contactInfo = [
     { label: '+91 72830 72930', icon: Phone },
-    { label: 'partnerships@theculthospitality.com', icon: Mail },
+    { label: 'partners@theculthospitality.com', icon: Mail },
     { label: 'Solapur, Maharashtra', icon: MapPin },
 ];
 

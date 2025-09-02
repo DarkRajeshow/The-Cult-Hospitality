@@ -9,20 +9,20 @@ const contactContent = {
     subheading:
       `We collaborate with property owners, entrepreneurs, and developers looking to grow their hospitality ventures. From consulting to full management—we're ready to scale with you.`,
     phone: '+91 72830 72930',
-    email: 'partnerships@theculthospitality.com'
+    email: 'partners@theculthospitality.com'
   },
   inquiry: {
     heading: 'Ready to Partner With The Cult Hospitality?',
     subtext: 'Fill out the form below and our partnership team will get back to you within 24 hours to discuss how we can help transform your property.',
     phone: '+91 72830 72930',
-    email: 'partnerships@theculthospitality.com'
+    email: 'partners@theculthospitality.com'
   },
   cta: {
     heading: 'Let\'s Build the Next Hospitality Standard Together',
     subtext:
       `From space management to guest experience strategy—we help property owners unlock performance and profitability. Let's explore what we can build together.`,
     phone: '+91 72830 72930',
-    email: 'partnerships@theculthospitality.com'
+    email: 'partners@theculthospitality.com'
   }
 };
 

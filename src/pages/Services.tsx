@@ -109,7 +109,7 @@ const servicesContent = {
     heading: "Partner With Passion – Build With Cult",
     description: "We're always looking to collaborate with passionate owners who share our commitment to design, service, and operational excellence.",
     contact: {
-      email: "partnerships@theculthospitality.com",
+      email: "partners@theculthospitality.com",
       phone: "+91 72830 72930",
       website: "www.theculthospitality.com"
     }

@@ -275,7 +275,7 @@ const brandsContent = {
     heading: "Experience The Cult Difference",
     description: "Whether you're a guest seeking exceptional experiences or a property owner looking to partner with us, we're here to create something extraordinary.",
     contact: {
-      email: "partnerships@theculthospitality.com",
+      email: "partners@theculthospitality.com",
       phone: "+91 72830 72930"
     }
   }

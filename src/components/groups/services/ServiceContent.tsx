@@ -176,6 +176,6 @@ export const servicesContent = {
     heading: "Ready to Unlock Your Property's Potential with Cult?",
     subtext: "Let's co-create hospitality spaces that earn trust, drive retention, and build legacy.",
     phone: "+91 72830 72930",
-    email: "partnerships@theculthospitality.com"
+    email: "partners@theculthospitality.com"
   }
 };
