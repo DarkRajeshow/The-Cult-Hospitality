@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                     <div className="space-y-4 lg:col-span-1">
                         <div className="flex items-center">
                             <Link to={'/'} className="flex items-center">
-                                <div className='h-16 sm:h-20 lg:h-24'>
+                                <div className='h-20 sm:h-20 lg:h-24'>
                                     <img className='h-full w-auto object-contain' src="/assets/images/logo-h.png" alt="The Cult Hospitality" />
                                 </div>
                             </Link>
