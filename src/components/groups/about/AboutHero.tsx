@@ -10,7 +10,7 @@ const AboutHero: React.FC<AboutHeroProps> = ({ subheading, description }) => {
     <div className="min-h-screen flex items-center justify-center py-8 sm:py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black mb-4 sm:mb-6 lg:mb-8 font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black mb-4 sm:mb-6 lg:mb-8 font-medium leading-tight">
             {subheading}
           </h1>
           <p className="text-sm md:text-lg lg:text-lg xl:text-xl text-gray-700 mb-6 sm:mb-8 lg:mb-12 max-w-2xl mx-auto leading-relaxed">

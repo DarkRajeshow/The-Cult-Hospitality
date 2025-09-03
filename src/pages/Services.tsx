@@ -130,7 +130,7 @@ const ServicesPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black mb-4 sm:mb-6 lg:mb-8 font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black mb-4 sm:mb-6 lg:mb-8 font-medium leading-tight">
                 {servicesContent.hero.heading}
               </h1>
               <p className="text-sm md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">

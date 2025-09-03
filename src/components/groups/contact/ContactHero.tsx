@@ -35,7 +35,7 @@ export default function ContactHero({ hero }: ContactHeroProps) {
     >
       <div className="max-w-6xl mx-auto text-center">
         <motion.div variants={fadeInUp}>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto text-black mb-4 sm:mb-6 lg:mb-8 font-bold text-center leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto text-black mb-4 sm:mb-6 lg:mb-8 font-medium text-center leading-tight">
             {hero.heading}
           </h1>
           <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-700 mb-6 sm:mb-8 lg:mb-12 max-w-2xl mx-auto leading-relaxed text-center">
