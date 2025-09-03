@@ -28,7 +28,7 @@ const contactContent = {
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-[#FFFDF7]">
+    <div className="min-h-screen">
       <ContactHero hero={contactContent.hero} />
       <InquiryForm 
         heading={contactContent.inquiry.heading}

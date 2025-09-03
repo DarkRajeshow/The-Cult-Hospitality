@@ -1,25 +1,26 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { 
-  ArrowRight, 
-  Shield, 
-  Building, 
-  TrendingUp, 
-  Star, 
-  Zap, 
-  Users, 
-  CheckCircle, 
-  Award, 
-  Mail, 
-  Phone, 
-  MapPin 
+import {
+  ArrowRight,
+  Shield,
+  Building,
+  TrendingUp,
+  Star,
+  Zap,
+  Users,
+  CheckCircle,
+  Award,
+  Mail,
+  Phone,
+  MapPin
 } from 'lucide-react';
 import CardSpotlight from '@/components/groups/about/CardSpotlight';
 import { BackgroundBeams } from '@/components/ui/background-beams';
+import { Link } from 'react-router-dom';
 
 const servicesContent = {
   hero: {
-    heading: "Join The Cult – Partner With Us",
+    heading: "Unlock Your Property’s Full Potential – Partner With Cult Hospitality.",
     subheading: "Grow with The Cult Hospitality",
     description: "The Cult Hospitality is more than a hospitality brand – it's a movement to redefine the guest experience through personalized service, design-forward properties, and operational excellence. Whether you're a property owner, developer, or entrepreneur, our proven model and powerful brand can help you unlock your property's full potential."
   },
@@ -118,24 +119,21 @@ const servicesContent = {
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-rose-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <BackgroundBeams className="absolute inset-0" />
         <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center leading-loose">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black mb-4 sm:mb-6 lg:mb-8 font-bold leading-tight">
                 {servicesContent.hero.heading}
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-blue-600 mb-6">
-                {servicesContent.hero.subheading}
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
                 {servicesContent.hero.description}
               </p>
             </motion.div>
@@ -144,7 +142,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Why Partner Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -158,7 +156,7 @@ const ServicesPage = () => {
                 {servicesContent.whyPartner.title}
               </h2>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {servicesContent.whyPartner.benefits.map((benefit, index) => (
                 <motion.div
@@ -187,7 +185,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Who Can Join Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -204,7 +202,7 @@ const ServicesPage = () => {
                 {servicesContent.whoCanJoin.description}
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {servicesContent.whoCanJoin.partners.map((partner, index) => (
                 <motion.div
@@ -225,7 +223,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Partnership Models Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -239,7 +237,7 @@ const ServicesPage = () => {
                 {servicesContent.partnershipModels.title}
               </h2>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {servicesContent.partnershipModels.models.map((model, index) => (
                 <motion.div
@@ -276,7 +274,7 @@ const ServicesPage = () => {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -290,7 +288,7 @@ const ServicesPage = () => {
                 {servicesContent.whatYouGet.title}
               </h2>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {servicesContent.whatYouGet.services.map((service, index) => (
                 <motion.div
@@ -311,7 +309,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+      <section className="flex items-center justify-center h-[80vh]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -320,14 +318,14 @@ const ServicesPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 max-w-3xl mx-auto leading-[1.2]">
                 {servicesContent.cta.heading}
               </h2>
-              <p className="text-xl mb-8 text-blue-100">
+              <p className="text-xl mb-8">
                 {servicesContent.cta.description}
               </p>
-              
-              <div className="grid md:flex justify-between gap-4 mb-8">
+
+              <div className="grid md:flex justify-around gap-4 max-w-3xl mx-auto my-16">
                 <div className="flex items-center justify-center space-x-3">
                   <Mail className="w-5 h-5" />
                   <span>{servicesContent.cta.contact.email}</span>
@@ -341,14 +339,16 @@ const ServicesPage = () => {
                   <span>{servicesContent.cta.contact.website}</span>
                 </div>
               </div>
-              
-              <Button 
-                size="lg" 
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-medium"
-              >
-                Fill the Partnership Inquiry Form
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="bg-black text-white px-8 py-4 text-lg font-medium"
+                >
+                  Fill the Partnership Inquiry Form
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

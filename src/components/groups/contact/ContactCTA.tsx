@@ -28,7 +28,7 @@ type ContactCTAProps = {
 export default function ContactCTA({ cta }: ContactCTAProps) {
   return (
     <motion.section
-      className="py-20 px-4 min-h-screen flex items-center bg-gray-50"
+      className="py-20 px-4 min-h-screen flex items-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}

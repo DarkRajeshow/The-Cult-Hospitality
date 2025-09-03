@@ -14,7 +14,7 @@ export interface HighlightsProps {
 
 const Highlights: React.FC<HighlightsProps> = ({ highlights }) => {
   return (
-    <section className="py-12 md:py-20 bg-gray-50">
+    <section className="py-12 md:py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-7xl font-medium text-center text-gray-900 mb-10 sm:mb-16">

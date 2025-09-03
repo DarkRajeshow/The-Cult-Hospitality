@@ -65,7 +65,7 @@ const Navbar = () => {
                                         : 'text-zinc-700 hover:text-black'
                                         }`}
                                 >
-                                    <span className="relative z-10">{item.label}</span>
+                                    <span className="relative z-10 font-bold">{item.label}</span>
 
                                     {/* Hover background */}
                                     <div className="absolute inset-0 bg-blue-50/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

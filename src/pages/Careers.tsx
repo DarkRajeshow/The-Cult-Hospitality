@@ -58,7 +58,7 @@ const content = {
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-rose-50 to-orange-50">
+    <div className="min-h-screen">
       <CareersHero content={content.hero} />
       <WhyWorkWithUs content={content.whyWorkWithUs} />
       <ApplicationForm content={content.applicationForm} />

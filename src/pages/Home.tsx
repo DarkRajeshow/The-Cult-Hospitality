@@ -306,11 +306,11 @@ const content = {
     }
   ],
   callToAction: {
-    badge: "READY TO EXPERIENCE THE CULT?",
-    heading: ["Let Us Craft Your", " Perfect Experience"],
+    badge: "PARTNER WITH THE CULT",
+    heading: ["Transform Your Property", " Into Excellence"],
     gradient: "text-blue-800",
-    description: "Whether you're planning a stay, celebration, or dining experience, we're here to make it extraordinary.",
-    inputPlaceholder: "Enter your email",
+    description: "Own a hotel or property? Let us handle your hospitality operations with our proven management expertise and turn your property into a profitable, guest-loved destination.",
+    inputPlaceholder: "Enter your business email",
     button: {
       default: "Join Us",
       submitted: "Thank You!"
@@ -319,7 +319,7 @@ const content = {
       empty: "Please enter your email.",
       invalid: "Please enter a valid email address."
     },
-    success: "We'll be in touch soon with exclusive offers!"
+    success: "We'll contact you within 24 hours to discuss partnership opportunities!"
   }
 };
 

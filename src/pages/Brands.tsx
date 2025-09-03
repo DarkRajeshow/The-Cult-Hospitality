@@ -31,7 +31,7 @@ interface Brand {
 
 const brandsContent = {
   hero: {
-    heading: "Our Brands",
+    heading: "Discover Our Distinctive Brands Shaping the Future of Hospitality Experiences",
     subheading: "A diverse portfolio of hospitality excellence",
     description: "The Cult Hospitality manages a comprehensive portfolio of brands, each designed to deliver exceptional experiences in their respective domains. From boutique stays to culinary excellence, we create memorable moments for every guest."
   },
@@ -285,24 +285,21 @@ const brandsContent = {
 
 const BrandsPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-rose-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <BackgroundBeams className="absolute inset-0" />
         <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center leading-loose">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black mb-4 sm:mb-6 lg:mb-8 font-bold leading-tight">
                 {brandsContent.hero.heading}
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-blue-600 mb-6">
-                {brandsContent.hero.subheading}
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
                 {brandsContent.hero.description}
               </p>
             </motion.div>
@@ -311,7 +308,7 @@ const BrandsPage = () => {
       </section>
 
       {/* Main Brands Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -361,7 +358,7 @@ const BrandsPage = () => {
                         {brand.features.map((feature: string, featureIndex: number) => (
                           <li key={featureIndex} className="flex items-center space-x-2">
                             <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                            <span className="text-xs text-gray-600">{feature}</span>
+                            <span className="text-xs lg:text-sm text-gray-600">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -385,7 +382,7 @@ const BrandsPage = () => {
       </section>
 
       {/* Cloud Kitchens Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -435,7 +432,7 @@ const BrandsPage = () => {
                         {subBrand.features.map((feature: string, featureIndex: number) => (
                           <li key={featureIndex} className="flex items-center space-x-2">
                             <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                            <span className="text-xs text-gray-600">{feature}</span>
+                            <span className="text-xs lg:text-sm text-gray-600">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -459,7 +456,7 @@ const BrandsPage = () => {
       </section>
 
       {/* Other Initiatives Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -470,7 +467,7 @@ const BrandsPage = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
-                Other Initiatives by Cult
+                The Cult Organics
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                 Expanding our impact through sustainable and wellness-focused ventures
@@ -507,19 +504,19 @@ const BrandsPage = () => {
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Premium organic products</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Premium organic products</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Healthier lifestyle focus</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Healthier lifestyle focus</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Quality ingredients</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Quality ingredients</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Sustainable sourcing</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Sustainable sourcing</span>
                       </li>
                     </ul>
                   </div>
@@ -563,19 +560,19 @@ const BrandsPage = () => {
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Premium quality nuts</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Premium quality nuts</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Ancient millets</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Ancient millets</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Modern nutrition</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Modern nutrition</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Wellness focus</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Wellness focus</span>
                       </li>
                     </ul>
                   </div>
@@ -595,7 +592,7 @@ const BrandsPage = () => {
       </section>
 
       {/* Social Activities Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -613,7 +610,7 @@ const BrandsPage = () => {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Cult Foundation */}
               {/* <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -643,19 +640,19 @@ const BrandsPage = () => {
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Community-driven initiatives</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Community-driven initiatives</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Sustainable development</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Sustainable development</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Social responsibility</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Social responsibility</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Local impact</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Local impact</span>
                       </li>
                     </ul>
                   </div>
@@ -699,19 +696,19 @@ const BrandsPage = () => {
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Tree plantation drives</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Tree plantation drives</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Sustainable future</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Sustainable future</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Environmental awareness</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Environmental awareness</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Green initiatives</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Green initiatives</span>
                       </li>
                     </ul>
                   </div>
@@ -720,7 +717,7 @@ const BrandsPage = () => {
                     <img 
                       src="/assets/images/story.png" 
                       alt="Tree Plantation"
-                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CardSpotlight>
@@ -755,19 +752,19 @@ const BrandsPage = () => {
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Innovative reforestation</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Innovative reforestation</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Environmental conservation</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Environmental conservation</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Seed ball technology</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Seed ball technology</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <Award className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-xs text-gray-600">Eco-friendly approach</span>
+                        <span className="text-xs lg:text-sm text-gray-600">Eco-friendly approach</span>
                       </li>
                     </ul>
                   </div>
@@ -776,7 +773,7 @@ const BrandsPage = () => {
                     <img 
                       src="/assets/images/story.png" 
                       alt="Seed Balls"
-                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CardSpotlight>
@@ -787,7 +784,7 @@ const BrandsPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -832,7 +829,7 @@ const BrandsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+      {/* <section className="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -861,7 +858,7 @@ const BrandsPage = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

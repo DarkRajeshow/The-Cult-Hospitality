@@ -144,7 +144,7 @@ const aboutContent = {
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <AboutHero subheading={aboutContent.hero.subheading} description={aboutContent.hero.description} />
       <MissionSection
         title={aboutContent.mission.title}
