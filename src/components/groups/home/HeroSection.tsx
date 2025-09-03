@@ -239,7 +239,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
   }, [mouseX, mouseY]);
 
   return (
-    <div className="relative h-[80vh] sm:h-screen overflow-hidden">
+    <div className="relative h-[100vh] sm:h-screen overflow-hidden">
       {/* Mouse Follower */}
       <MouseFollower />
 
@@ -261,7 +261,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
           className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/70"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-orange-600/10" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-orange-600/10" /> */}
 
         {/* Dynamic Grain Effect */}
         <motion.div
@@ -320,7 +320,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
               initial={{ opacity: 0 }}
               animate={isLoaded ? { opacity: 1 } : {}}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white mb-2 sm:mb-4 leading-tight sm:leading-none tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-MyAwesomeFont font-semibold text-white mb-2 sm:mb-4 leading-tight sm:leading-none tracking-tight"
             >
               <motion.span
                 initial={{ y: 150, opacity: 0 }}
@@ -390,7 +390,7 @@ const HeroSection: React.FC<{ content: HeroContent }> = ({ content }) => {
                       stiffness: 200
                     }}
                   >
-                    <Star className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 fill-amber-400 text-amber-400 filter drop-shadow-lg" />
+                    <Star className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 fill-amber-400 text-amber-400 filter drop-shadow-sm" />
                   </motion.div>
                 ))}
               </div>

@@ -50,7 +50,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ title, description, members, 
           </div>
 
           {/* Departments */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
             <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6 text-center">
               Our Expert Departments
             </h3>

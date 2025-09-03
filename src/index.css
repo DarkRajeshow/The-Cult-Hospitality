@@ -10,6 +10,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Custom';
+  src: url('/assets/fonts/Custom-Regular.woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Custom';
+  src: url('/assets/fonts/Custom-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+
 
 @font-face {
   font-family: "MyAwesomeFont";
@@ -54,10 +69,16 @@
 }
 
 
-body {
+.font-MyAwesomeFont {
   font-family: "MyAwesomeFont", sans-serif;
 }
 
+
+
+body {
+  font-family: 'Custom', sans-serif;
+  font-weight: 400; /* default */
+}
 html {
   scroll-behavior: smooth;
 }
@@ -128,11 +149,11 @@ img, video {
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-1: oklch(0.208 0.042 265.755);
+  --chart-2: oklch(0.3 0.042 265.755);
+  --chart-3: oklch(0.4 0.042 265.755);
+  --chart-4: oklch(0.5 0.042 265.755);
+  --chart-5: oklch(0.6 0.042 265.755);
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
   --sidebar-primary: oklch(0.208 0.042 265.755);

@@ -8,7 +8,7 @@ export default function WhatsAppFloatingButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed z-50 bottom-4 sm:bottom-6 right-4 sm:right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-3 sm:p-4 flex items-center justify-center transition-all duration-200 hover:scale-110"
+      className="fixed z-50 bottom-4 sm:bottom-6 right-4 sm:right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-sm p-3 sm:p-4 flex items-center justify-center transition-all duration-200 hover:scale-110"
       style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}
     >
       {/* WhatsApp SVG Icon */}

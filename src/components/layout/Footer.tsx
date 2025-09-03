@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
                                     key={label}
                                     href={href}
                                     aria-label={label}
-                                    className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-amber-500 to-rose-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
+                                    className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-800 rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
                                 >
                                     {icon}
                                 </a>

@@ -43,7 +43,7 @@ const content = {
   brandIntroduction: {
     badge: "WHO WE ARE",
     heading: ["Creating Boutique Hospitality", " That Leaves a Mark"],
-    gradient: "bg-gradient-to-r from-amber-600 to-rose-600 bg-clip-text text-transparent",
+    gradient: "text-blue-800",
     paragraphs: [
       "The Cult Hospitality is a premier hospitality group dedicated to redefining industry standards with unparalleled experiences and personalized service across a diverse array of brands. Our mission is to offer exceptional stays, dining, and event experiences, ensuring every guest enjoys world-class hospitality.",
       "Whether you're a traveler seeking soulful stays or a property owner seeking professional hotel management, The Cult is where authenticity meets excellence.",
@@ -60,7 +60,7 @@ const content = {
       description: "Boutique hotel experiences curated for comfort and culture.",
       icon: Building,
       image: "/assets/images/bedroom.png",
-      gradient: "from-amber-100 to-amber-50"
+      gradient: "from-blue-100 to-blue-50"
     },
     {
       id: 2,
@@ -68,7 +68,7 @@ const content = {
       description: "Premium event venues for weddings, gatherings, and milestones.",
       icon: Calendar,
       image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400&h=300&fit=crop",
-      gradient: "from-rose-100 to-rose-50"
+      gradient: "from-blue-100 to-blue-50"
     },
     {
       id: 4,
@@ -84,7 +84,7 @@ const content = {
       description: "A new era of delivery-first dining, powered by The Cult Hospitality.",
       icon: ChefHat,
       image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
-      gradient: "from-emerald-100 to-emerald-50",
+      gradient: "from-blue-100 to-blue-50",
       subOfferings: [
         {
           id: 3.1,
@@ -92,7 +92,7 @@ const content = {
           description: "Elevated dining with seasonal menus and conscious cooking.",
           icon: ChefHat,
           image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
-          gradient: "from-emerald-100 to-emerald-50"
+          gradient: "from-blue-100 to-blue-50"
         },
         {
           id: 3.2,
@@ -308,7 +308,7 @@ const content = {
   callToAction: {
     badge: "READY TO EXPERIENCE THE CULT?",
     heading: ["Let Us Craft Your", " Perfect Experience"],
-    gradient: "bg-gradient-to-r from-amber-600 to-rose-600 bg-clip-text text-transparent",
+    gradient: "text-blue-800",
     description: "Whether you're planning a stay, celebration, or dining experience, we're here to make it extraordinary.",
     inputPlaceholder: "Enter your email",
     button: {
@@ -327,7 +327,7 @@ const content = {
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-rose-50">
+    <div className="min-h-screen">
       <HeroSection content={content.hero} />
       <BrandIntroduction content={content.brandIntroduction} />
       <OurOfferings offerings={content.offerings} />

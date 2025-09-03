@@ -25,7 +25,7 @@ const ServiceCTA = ({ cta }: { cta: { heading: string; subtext: string; phone: s
       </div>
       <div className="text-center mb-20">
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <a href="https://maps.app.goo.gl/iPz1Rii6x26L6rECA" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white rounded-full font-medium text-lg hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5" style={{ textDecoration: 'none' }}>
+          <a href="https://maps.app.goo.gl/iPz1Rii6x26L6rECA" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white rounded-full font-medium text-lg hover:bg-slate-800 transition-all duration-300 shadow-sm hover:shadow-xl transform hover:-translate-y-0.5" style={{ textDecoration: 'none' }}>
             <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />

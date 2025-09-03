@@ -51,8 +51,8 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-rose-100 to-purple-100" />
+    <section className="py-12 h-[70vh] flex items-center justify-center sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* <div className="absolute inset-0 bg-gray-100" /> */}
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div variants={itemVariants} initial="hidden" animate="visible" className="space-y-4 sm:space-y-6 lg:space-y-8">
           <Badge className="bg-white/80 text-gray-800 border-gray-200 mb-4 sm:mb-6 text-xs sm:text-sm lg:text-base px-3 sm:px-4 py-1 sm:py-2">

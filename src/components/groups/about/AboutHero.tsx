@@ -16,7 +16,7 @@ const AboutHero: React.FC<AboutHeroProps> = ({ subheading, description }) => {
           <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-700 mb-6 sm:mb-8 lg:mb-12 max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
-          <div className="w-full shadow-lg bg-black flex items-center justify-center rounded-lg overflow-hidden">
+          <div className="w-full shadow-sm bg-black flex items-center justify-center rounded-lg overflow-hidden">
             <img 
               src="/assets/images/family.png" 
               alt="The Cult Hospitality Family" 

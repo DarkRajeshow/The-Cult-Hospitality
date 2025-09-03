@@ -83,7 +83,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ content }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-white/80 backdrop-blur-sm p-8 md:p-10 rounded-2xl shadow-lg border border-white/30"
+          className="bg-white/80 backdrop-blur-sm p-8 md:p-10 rounded-2xl shadow-sm border border-white/30"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -186,7 +186,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ content }) => {
                   ? 'bg-green-500'
                   : submitStatus === 'error'
                   ? 'bg-red-500'
-                  : 'bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 shadow-lg hover:shadow-xl'
+                  : 'bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 shadow-sm hover:shadow-xl'
               }`}
             >
               {submitStatus === 'loading' && (

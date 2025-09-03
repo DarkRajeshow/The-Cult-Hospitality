@@ -37,7 +37,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials 
           </Badge>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6">
             Stories from Our
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> Guests</span>
+            <span className="text-blue-800"> Guests</span>
           </h2>
         </motion.div>
         <motion.div variants={itemVariants} initial="hidden" animate="visible">

@@ -35,7 +35,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ features }) => {
           </Badge>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6">
             The Difference is in the
-            <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent"> Details</span>
+            <span className="text-blue-800"> Details</span>
           </h2>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">

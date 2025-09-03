@@ -126,12 +126,12 @@ const SubOfferingCard: React.FC<{
     return (
         <motion.div
             variants={subItemVariants}
-            className={`${marginLeft} border-l-2 border-white/20 pl-4 py-1`}
+            className={`${marginLeft} border-l-2 border-black/20 pl-4 py-1`}
         >
             <div
-                className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 cursor-pointer ${isActive
-                    ? 'bg-white/15 border border-white/30'
-                    : 'hover:bg-white/10'
+                className={`flex items-center space-x-3 p-3 rounded-lg transition-all border duration-200 cursor-pointer ${isActive
+                    ? 'bg-gray-100 border-black/30'
+                    : 'hover:bg-white/10 border-transparent'
                     }`}
                 onMouseEnter={onHover}
                 onMouseLeave={onLeave}
@@ -139,29 +139,29 @@ const SubOfferingCard: React.FC<{
             >
                 {subOffering.icon && (
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ${isActive
-                        ? 'bg-white/20'
+                        ? 'bg-black/1o'
                         : 'bg-white/15'
                         }`}>
-                        <subOffering.icon className="h-4 w-4 text-white" />
+                        <subOffering.icon className="h-4 w-4 text-black" />
                     </div>
                 )}
 
                 <div className="flex-1">
                     <div className="flex items-center justify-between">
-                        <h4 className="text-sm font-medium text-white flex items-center">
+                        <h4 className="text-sm font-medium text-black flex items-center">
                             {subOffering.title}
                             {hasNestedSubOfferings && (
-                                <span className="ml-2 inline-flex items-center justify-center w-4 h-4 text-xs font-semibold rounded-full bg-orange-500 text-white">
+                                <span className="ml-2 inline-flex items-center justify-center w-4 h-4 text-xs font-semibold rounded-full bg-orange-500 text-black">
                                     {subOffering.subOfferings!.length}
                                 </span>
                             )}
                         </h4>
                         {hasNestedSubOfferings && (
-                            <ChevronRight className={`h-3 w-3 text-white/70 transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''
+                            <ChevronRight className={`h-3 w-3 text-black/70 transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''
                                 }`} />
                         )}
                     </div>
-                    <p className="text-xs text-white/80 mt-0.5">
+                    <p className="text-xs text-black/80 mt-0.5">
                         {subOffering.description}
                     </p>
                 </div>
@@ -275,7 +275,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
     }
 
     return (
-        <AnimatedSection className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100">
+        <AnimatedSection className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
 
 
             <div className="max-w-7xl mx-auto z-10">
@@ -312,8 +312,8 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                                     onMouseLeave={handleCardLeave}
                                     onClick={(e) => handleCardClick(offering, e)}
                                 >
-                                    <Card className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${isCardActive || isExpanded
-                                        ? 'bg-gradient-to-br from-gray-900 to-gray-800'
+                                    <Card className={`border-0 shadow-sm transition-all duration-300 overflow-hidden ${isCardActive || isExpanded
+                                        ? 'bg-gray-100'
                                         : 'bg-white hover:bg-gray-50'
                                         }`}>
                                         <CardContent className="p-4 sm:p-6">
@@ -323,7 +323,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                                                     : `bg-gradient-to-br ${offering.gradient}`
                                                     }`}>
                                                     <offering.icon className={`h-5 w-5 sm:h-7 sm:w-7 transition-colors duration-300 ${isCardActive || isExpanded
-                                                        ? 'text-white'
+                                                        ? 'text-black'
                                                         : 'text-gray-700'
                                                         }`} />
                                                 </div>
@@ -331,12 +331,12 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                                                 <div className="flex-1">
                                                     <div className="flex items-center justify-between">
                                                         <h3 className={`text-lg sm:text-xl font-semibold mb-1 sm:mb-2 transition-colors duration-300 flex items-center ${isCardActive || isExpanded
-                                                            ? 'text-white'
+                                                            ? 'text-black'
                                                             : 'text-gray-900'
                                                             }`}>
                                                             {offering.title}
                                                             {offering.subOfferings && offering.subOfferings.length > 0 && (
-                                                                <span className="ml-2 sm:ml-3 inline-flex items-center justify-center w-4 h-4 sm:w-6 sm:h-6 text-xs font-semibold rounded-full bg-orange-500 text-white">
+                                                                <span className="ml-2 sm:ml-3 inline-flex items-center justify-center w-4 h-4 sm:w-6 sm:h-6 text-xs font-semibold rounded-full bg-orange-500 text-black">
                                                                     {countTotalSubOfferings(offering.subOfferings)}
                                                                 </span>
                                                             )}
@@ -344,14 +344,14 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
 
                                                         {offering.subOfferings && offering.subOfferings.length > 0 && (
                                                             <ChevronDown className={`h-4 w-4 sm:h-5 sm:w-5 transition-all duration-300 ${isCardActive || isExpanded
-                                                                ? 'text-white'
+                                                                ? 'text-black'
                                                                 : 'text-gray-500'
                                                                 } ${isExpanded ? 'rotate-180' : ''}`} />
                                                         )}
                                                     </div>
 
                                                     <p className={`text-sm sm:text-base leading-relaxed transition-colors duration-300 ${isCardActive || isExpanded
-                                                        ? 'text-white/90'
+                                                        ? 'text-black/90'
                                                         : 'text-gray-600'
                                                         }`}>
                                                         {offering.description}
@@ -359,7 +359,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                                                 </div>
 
                                                 <ArrowRight className={`h-4 w-4 sm:h-6 sm:w-6 transition-all duration-300 ${isCardActive || isExpanded
-                                                    ? 'text-white transform translate-x-1'
+                                                    ? 'text-black transform translate-x-1'
                                                     : 'text-gray-400 group-hover:text-gray-600 group-hover:transform group-hover:translate-x-1'
                                                     }`} />
                                             </div>
@@ -372,10 +372,10 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                                                         initial="collapsed"
                                                         animate="expanded"
                                                         exit="collapsed"
-                                                        className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/20"
+                                                        className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-black/20"
                                                     >
                                                         <div className="mb-3 sm:mb-4">
-                                                            <p className="text-xs font-semibold text-white/70 uppercase tracking-wider">
+                                                            <p className="text-xs font-semibold text-black/70 uppercase tracking-wider">
                                                                 Sub-offerings ({countTotalSubOfferings(offering.subOfferings)})
                                                             </p>
                                                         </div>
@@ -422,7 +422,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
 
                             {/* Simple floating badge */}
                             <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-30">
-                                <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold shadow-lg">
+                                <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold shadow-sm">
                                     {selectedTitle}
                                 </Badge>
                             </div>
@@ -439,7 +439,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                     <motion.div className="text-center mt-12 sm:mt-16">
                         <Button
                             size="lg"
-                            className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                            className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-sm hover:shadow-xl transition-all duration-300"
                         >
                             <Sparkles className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                             Explore All Brands
