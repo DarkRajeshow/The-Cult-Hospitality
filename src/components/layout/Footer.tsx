@@ -27,7 +27,7 @@ const experiences = [
     { label: 'The Cult Stay', icon: Building, href: '/brands' },
     { label: 'The Cult Banquet', icon: Calendar, href: '/brands' },
     { label: 'The Cults Kitchen', icon: ChefHat, href: '/brands' },
-    { label: 'The Cults Café & Bistro', icon: Coffee, href: '/brands' },
+    { label: 'The Cults Café', icon: Coffee, href: '/brands' },
 ];
 
 const contactInfo = [
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                         <div className="flex items-center">
                             <Link to={'/'} className="flex items-center">
                                 <div className='h-20 sm:h-20 lg:h-24'>
-                                    <img className='h-full w-auto object-contain' src="/assets/images/logo-h.png" alt="The Cult Hospitality" />
+                                    <img className='h-full w-auto object-contain' src="/assets/images/logo-hp.png" alt="The Cult Hospitality" />
                                 </div>
                             </Link>
                         </div>

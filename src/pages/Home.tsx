@@ -72,7 +72,7 @@ const content = {
     },
     {
       id: 4,
-      title: "The Cult Café & Bistro",
+      title: "The Cult Café",
       description: "Charming spaces for coffee, calm, and conversations.",
       icon: Coffee,
       image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=300&fit=crop",
@@ -106,69 +106,166 @@ const content = {
     },
     {
       id: 5,
-      title: "Other Initiatives by Cult",
-      description: "Expanding our impact through sustainable and wellness-focused ventures.",
-      icon: Leaf,
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-      gradient: "from-green-100 to-green-50",
+      title: "Cult Organics",
+      description: "Premium organic products for a healthier lifestyle.",
+      icon: Wheat,
+      image: "/assets/images/cult-nuts.png",
+      gradient: "from-yellow-100 to-yellow-50",
       subOfferings: [
         {
-          id: 5.1,
-          title: "Cult Organics",
-          description: "Premium organic products for a healthier lifestyle.",
+          id: 5.11,
+          title: "Nuts & Millets",
+          description: "Premium quality nuts and ancient millets sourced from the finest locations for modern nutrition and wellness.",
           icon: Wheat,
           image: "/assets/images/cult-nuts.png",
-          gradient: "from-yellow-100 to-yellow-50",
-          subOfferings: [
-            {
-              id: 5.11,
-              title: "Nuts & Millets",
-              description: "Premium quality nuts and ancient millets sourced from the finest locations for modern nutrition and wellness.",
-              icon: Wheat,
-              image: "/assets/images/cult-nuts.png",
-              gradient: "from-amber-100 to-yellow-50"
-            }
-          ]
+          gradient: "from-amber-100 to-yellow-50"
         }
       ]
     },
     {
       id: 6,
-      title: "Social Activities",
-      description: "Making a positive impact on communities and the environment.",
-      icon: Sprout,
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
-      gradient: "from-teal-100 to-teal-50",
+      title: "Cult Foundation",
+      description: "Community-driven initiatives for sustainable development.",
+      icon: Heart,
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+      gradient: "from-pink-100 to-pink-50",
       subOfferings: [
         {
           id: 6.1,
-          title: "Cult Foundation",
-          description: "Community-driven initiatives for sustainable development.",
-          icon: Heart,
-          image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
-          gradient: "from-pink-100 to-pink-50",
-          subOfferings: [
-            {
-              id: 6.11,
-              title: "Tree Plantation",
-              description: "Greening initiatives for a sustainable future.",
-              icon: Sprout,
-              image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
-              gradient: "from-green-100 to-green-50"
-            },
-            {
-              id: 6.12,
-              title: "Seed Balls",
-              description: "Innovative approach to reforestation and environmental conservation.",
-              icon: Leaf,
-              image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-              gradient: "from-emerald-100 to-emerald-50"
-            }
-          ]
+          title: "Tree Plantation",
+          description: "Greening initiatives for a sustainable future.",
+          icon: Sprout,
+          image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+          gradient: "from-green-100 to-green-50"
+
+        },
+        {
+          id: 6.12,
+          title: "Seed Balls",
+          description: "Innovative approach to reforestation and environmental conservation.",
+          icon: Leaf,
+          image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+          gradient: "from-emerald-100 to-emerald-50"
         }
       ]
     }
   ],
+  // offerings: [
+  //   {
+  //     id: 1,
+  //     title: "The Cult Stay",
+  //     description: "Boutique hotel experiences curated for comfort and culture.",
+  //     icon: Building,
+  //     image: "/assets/images/bedroom.png",
+  //     gradient: "from-amber-100 to-amber-50"
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "The Cult Banquet",
+  //     description: "Premium event venues for weddings, gatherings, and milestones.",
+  //     icon: Calendar,
+  //     image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400&h=300&fit=crop",
+  //     gradient: "from-rose-100 to-rose-50"
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "The Cult Café",
+  //     description: "Charming spaces for coffee, calm, and conversations.",
+  //     icon: Coffee,
+  //     image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=300&fit=crop",
+  //     gradient: "from-blue-100 to-blue-50"
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Cloud Kitchens",
+  //     description: "A new era of delivery-first dining, powered by The Cult Hospitality.",
+  //     icon: ChefHat,
+  //     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
+  //     gradient: "from-emerald-100 to-emerald-50",
+  //     subOfferings: [
+  //       {
+  //         id: 3.1,
+  //         title: "The Cult Kitchen",
+  //         description: "Elevated dining with seasonal menus and conscious cooking.",
+  //         icon: ChefHat,
+  //         image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
+  //         gradient: "from-emerald-100 to-emerald-50"
+  //       },
+  //       {
+  //         id: 3.2,
+  //         title: "The Tali Spot",
+  //         description: "Authentic, home-style Indian thalis delivered fresh to your door.",
+  //         icon: Wheat,
+  //         image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop",
+  //         gradient: "from-yellow-100 to-yellow-50"
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Other Initiatives by Cult",
+  //     description: "Expanding our impact through sustainable and wellness-focused ventures.",
+  //     icon: Leaf,
+  //     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+  //     gradient: "from-green-100 to-green-50",
+  //     subOfferings: [
+  //       {
+  //         id: 5.1,
+  //         title: "Cult Organics",
+  //         description: "Premium organic products for a healthier lifestyle.",
+  //         icon: Wheat,
+  //         image: "/assets/images/cult-nuts.png",
+  //         gradient: "from-yellow-100 to-yellow-50",
+  //         subOfferings: [
+  //           {
+  //             id: 5.11,
+  //             title: "Nuts & Millets",
+  //             description: "Premium quality nuts and ancient millets sourced from the finest locations for modern nutrition and wellness.",
+  //             icon: Wheat,
+  //             image: "/assets/images/cult-nuts.png",
+  //             gradient: "from-amber-100 to-yellow-50"
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Social Activities",
+  //     description: "Making a positive impact on communities and the environment.",
+  //     icon: Sprout,
+  //     image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+  //     gradient: "from-teal-100 to-teal-50",
+  //     subOfferings: [
+  //       {
+  //         id: 6.1,
+  //         title: "Cult Foundation",
+  //         description: "Community-driven initiatives for sustainable development.",
+  //         icon: Heart,
+  //         image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+  //         gradient: "from-pink-100 to-pink-50",
+  //         subOfferings: [
+  //           {
+  //             id: 6.11,
+  //             title: "Tree Plantation",
+  //             description: "Greening initiatives for a sustainable future.",
+  //             icon: Sprout,
+  //             image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+  //             gradient: "from-green-100 to-green-50"
+  //           },
+  //           {
+  //             id: 6.12,
+  //             title: "Seed Balls",
+  //             description: "Innovative approach to reforestation and environmental conservation.",
+  //             icon: Leaf,
+  //             image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+  //             gradient: "from-emerald-100 to-emerald-50"
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   }
+  // ],
 
   features: [
     {

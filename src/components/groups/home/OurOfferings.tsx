@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useEffect, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -33,6 +33,7 @@ export interface Offering {
 interface AnimatedSectionProps {
     children: React.ReactNode;
     className?: string;
+    ref?: React.RefObject<HTMLDivElement>;
 }
 
 // Simplified Animation variants - reduced animations
@@ -87,9 +88,10 @@ const expandVariants = {
 };
 
 // Components
-const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className = "" }) => {
+const AnimatedSection = forwardRef<HTMLDivElement, AnimatedSectionProps>(({ children, className = "" }, ref) => {
     return (
         <motion.section
+            ref={ref}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -99,7 +101,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className =
             {children}
         </motion.section>
     );
-};
+});
 
 const SubOfferingCard: React.FC<{
     subOffering: SubOffering;
@@ -201,6 +203,9 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
     const [expandedCards, setExpandedCards] = useState<Set<string | number>>(new Set());
     const [expandedSubOfferings, setExpandedSubOfferings] = useState<Set<string>>(new Set());
 
+    // Refs for sticky behavior
+    const sectionRef = useRef<HTMLDivElement>(null);
+
     const handleCardHover = useCallback((offering: Offering) => {
         setActiveCard(offering.id.toString());
         setSelectedImage(offering.hoverImage || offering.image);
@@ -270,12 +275,10 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
     }
 
     return (
-        <AnimatedSection className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100 relative overflow-hidden">
-            {/* Subtle background elements */}
-            <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-bl from-orange-200/20 to-transparent rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-tr from-yellow-200/20 to-transparent rounded-full blur-3xl" />
+        <AnimatedSection className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100">
 
-            <div className="max-w-7xl mx-auto relative z-10">
+
+            <div className="max-w-7xl mx-auto z-10">
                 <motion.div className="text-center mb-12 sm:mb-16">
                     <Badge className="bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-800 border-orange-200/50 mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold">
                         <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
@@ -293,10 +296,10 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                         From boutique hospitality to sustainable initiatives, explore our diverse ecosystem of brands working together to create meaningful impact and exceptional experiences
                     </p>
                 </motion.div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-start">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-                    {/* Left Side - Cards */}
-                    <motion.div className="space-y-4 lg:pr-4 h-[400px] sm:h-[500px] overflow-auto">
+                    {/* Left Side - Cards (No scrollbar, natural flow) */}
+                    <motion.div className="space-y-4 lg:pr-4">
                         {offerings.map((offering) => {
                             const isCardActive = activeCard === offering.id.toString() || activeCard?.startsWith(`${offering.id}-`);
                             const isExpanded = expandedCards.has(offering.id);
@@ -400,45 +403,40 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                         })}
                     </motion.div>
 
-                    {/* Right Side - Sticky Image Display */}
-                    <div className="relative lg:pl-4 h-[300px] sm:h-[400px] lg:h-[500px]">
-                        <div className="sticky top-24 space-y-0">
-                            <motion.div className="relative h-60 sm:h-80 lg:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-20" />
+                    <div className="relative lg:sticky lg:top-24">
+                        <motion.div className="relative h-60 sm:h-80 lg:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-20" />
 
-                                <AnimatePresence mode="wait">
-                                    <motion.img
-                                        key={selectedImage}
-                                        src={selectedImage}
-                                        alt="Brand showcase"
-                                        initial="hidden"
-                                        animate="visible"
-                                        exit="exit"
-                                        variants={imageVariants}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </AnimatePresence>
+                            <AnimatePresence mode="wait">
+                                <motion.img
+                                    key={selectedImage}
+                                    src={selectedImage}
+                                    alt="Brand showcase"
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                    variants={imageVariants}
+                                    className="w-full h-full object-cover"
+                                />
+                            </AnimatePresence>
 
-                                {/* Simple floating badge */}
-                                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-30">
-                                    <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold shadow-lg">
-                                        {selectedTitle}
-                                    </Badge>
-                                </div>
+                            {/* Simple floating badge */}
+                            <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-30">
+                                <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold shadow-lg">
+                                    {selectedTitle}
+                                </Badge>
+                            </div>
 
-                                {/* Subtle decorative elements */}
-                                <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full opacity-20 blur-xl" />
-                                <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-15 blur-xl" />
-                            </motion.div>
-                        </div>
+                            {/* Subtle decorative elements */}
+                            <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full opacity-20 blur-xl" />
+                            <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-15 blur-xl" />
+                        </motion.div>
                     </div>
                 </div>
 
                 {/* Call to Action */}
                 <Link to="/brands">
-                    <motion.div
-                        className="text-center mt-12 sm:mt-16"
-                    >
+                    <motion.div className="text-center mt-12 sm:mt-16">
                         <Button
                             size="lg"
                             className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"

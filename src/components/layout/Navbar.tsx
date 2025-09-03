@@ -49,7 +49,7 @@ const Navbar = () => {
                         {/* Logo Section */}
                         <Link to={'/'} className={`flex items-center`}>
                             <div className='h-20 sm:h-20 md:h-24'>
-                                <img className='h-full' src="/assets/images/logo-h.png" alt="" />
+                                <img className='h-full' src="/assets/images/logo-hp.png" alt="" />
                             </div>
                         </Link>
 
@@ -121,13 +121,13 @@ const Navbar = () => {
 
                         {/* <div className="flex items-center">
                             <div className='h-20'>
-                                <img className='w-20' src="/assets/images/logo-h.png" alt="" />
+                                <img className='w-20' src="/assets/images/logo-hp.png" alt="" />
                             </div>
                         </div> */}
                         {/* 
                         <Link to={'/'} className={`flex items-center`}>
                             <div className='h-24 sm:h-20 md:h-30'>
-                                <img className='w-24 sm:w-20 md:w-30' src="/assets/images/logo-h.png" alt="" />
+                                <img className='w-24 sm:w-20 md:w-30' src="/assets/images/logo-hp.png" alt="" />
                             </div>
                         </Link> */}
 

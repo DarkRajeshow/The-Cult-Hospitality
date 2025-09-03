@@ -69,7 +69,7 @@ const brandsContent = {
     },
     {
       id: 3,
-      name: "The Cult Café & Bistro",
+      name: "The Cult Café",
       type: "Cozy Café Experience",
       description: "Charming spaces for coffee, calm, and conversations.",
       icon: Coffee,
