@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect, forwardRef } from 'react';
+import React, { useState, useCallback, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -204,7 +204,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
     const [expandedSubOfferings, setExpandedSubOfferings] = useState<Set<string>>(new Set());
 
     // Refs for sticky behavior
-    const sectionRef = useRef<HTMLDivElement>(null);
+    // const sectionRef = useRef<HTMLDivElement>(null);
 
     const handleCardHover = useCallback((offering: Offering) => {
         setActiveCard(offering.id.toString());
