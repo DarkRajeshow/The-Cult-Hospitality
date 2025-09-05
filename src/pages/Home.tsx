@@ -72,7 +72,7 @@ const content = {
     },
     {
       id: 4,
-      title: "The Cult Café",
+      title: "The Cult's Cafe",
       description: "Charming spaces for coffee, calm, and conversations.",
       icon: Coffee,
       image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=300&fit=crop",
@@ -88,7 +88,7 @@ const content = {
       subOfferings: [
         {
           id: 3.1,
-          title: "The Cult Kitchen",
+          title: "The Cult's Kitchen",
           description: "Elevated dining with seasonal menus and conscious cooking.",
           icon: ChefHat,
           image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
@@ -96,7 +96,7 @@ const content = {
         },
         {
           id: 3.2,
-          title: "The Tali Spot",
+          title: "The Thali Spot",
           description: "Authentic, home-style Indian thalis delivered fresh to your door.",
           icon: Wheat,
           image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop",
@@ -169,7 +169,7 @@ const content = {
   //   },
   //   {
   //     id: 4,
-  //     title: "The Cult Café",
+  //     title: "The Cult's Cafe",
   //     description: "Charming spaces for coffee, calm, and conversations.",
   //     icon: Coffee,
   //     image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=300&fit=crop",
@@ -185,7 +185,7 @@ const content = {
   //     subOfferings: [
   //       {
   //         id: 3.1,
-  //         title: "The Cult Kitchen",
+  //         title: "The Cult's Kitchen",
   //         description: "Elevated dining with seasonal menus and conscious cooking.",
   //         icon: ChefHat,
   //         image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
@@ -193,7 +193,7 @@ const content = {
   //       },
   //       {
   //         id: 3.2,
-  //         title: "The Tali Spot",
+  //         title: "The Thali Spot",
   //         description: "Authentic, home-style Indian thalis delivered fresh to your door.",
   //         icon: Wheat,
   //         image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop",

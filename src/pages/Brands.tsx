@@ -69,7 +69,7 @@ const brandsContent = {
     },
     {
       id: 3,
-      name: "The Cult Café",
+      name: "The Cult's Cafe",
       type: "Cozy Café Experience",
       description: "Charming spaces for coffee, calm, and conversations.",
       icon: Coffee,
@@ -99,7 +99,7 @@ const brandsContent = {
       subBrands: [
         {
           id: 4.1,
-          name: "The Cult Kitchen",
+          name: "The Cult's Kitchen",
           type: "Elevated Dining",
           description: "Elevated dining with seasonal menus and conscious cooking.",
           icon: ChefHat,
@@ -114,7 +114,7 @@ const brandsContent = {
         },
         {
           id: 4.2,
-          name: "The Tali Spot",
+          name: "The Thali Spot",
           type: "Authentic Indian Thalis",
           description: "Authentic, home-style Indian thalis delivered fresh to your door.",
           icon: Wheat,

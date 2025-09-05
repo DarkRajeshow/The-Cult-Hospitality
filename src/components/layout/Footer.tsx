@@ -25,7 +25,7 @@ const navigationLinks = [
 
 const experiences = [   
     { label: 'The Cult Stay', icon: Building, href: '/brands' },
-    { label: 'The Cult Banquet', icon: Calendar, href: '/brands' },
+    { label: "The Cult Banquet", icon: Calendar, href: '/brands' },
     { label: 'The Cults Kitchen', icon: ChefHat, href: '/brands' },
     { label: 'The Cults Café', icon: Coffee, href: '/brands' },
 ];
