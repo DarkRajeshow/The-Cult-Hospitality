@@ -5,6 +5,7 @@ import StorySection from '@/components/groups/about/StorySection';
 import Highlights from '@/components/groups/about/Highlights';
 import TeamSection from '@/components/groups/about/TeamSection';
 import { Shield, Zap, Award, Heart, Users, Leaf, Target, Star, TrendingUp } from 'lucide-react';
+import DepartmentsSection from '@/components/groups/about/DepartmentsSection';
 
 // Content configuration object
 const aboutContent = {
@@ -95,7 +96,7 @@ const aboutContent = {
       },
       {
         name: "Siddeshwar Jokare",
-        role: "Co-Founder & Director", 
+        role: "Co-Founder & Director",
         description: "Drives strategic growth and operational excellence across all brands."
       },
       {
@@ -104,12 +105,62 @@ const aboutContent = {
         description: "Provides strategic vision and invaluable guidance."
       }
     ],
+  },
+  departments: {
+    title: "Our Expert Departments",
+    description:
+      "Each of our specialized departments plays a critical role in delivering exceptional experiences to our guests. Backed by seasoned professionals, our team ensures excellence in every detail — from warm hospitality to flawless operations.",
     departments: [
-      "Experienced Hoteliers – Ensure a seamless and luxurious guest experience",
-      "Event Planners & Coordinators – Bring creativity and precision to every event",
-      "Talented Chefs & Culinary Experts – Craft exceptional and innovative dishes",
-      "Customer Service Professionals – Ensure warm and personalized guest experiences",
-      "Support Staff – Maintain the highest standards of cleanliness, safety, and comfort"
+      {
+        name: "Hospitality & Guest Relations",
+        summary:
+          "Led by experienced hoteliers, this department ensures every guest enjoys a seamless, personalized, and luxurious experience from check-in to check-out.",
+        keyResponsibilities: [
+          "Oversee front-of-house operations",
+          "Deliver tailored services to exceed guest expectations",
+          "Maintain consistently high standards of service and professionalism"
+        ]
+      },
+      {
+        name: "Event Planning & Coordination",
+        summary:
+          "Our creative and detail-oriented planners bring each event to life with precision, offering customized solutions for both private and corporate gatherings.",
+        keyResponsibilities: [
+          "Design and manage end-to-end event experiences",
+          "Coordinate with vendors, suppliers, and internal teams",
+          "Ensure flawless execution and guest satisfaction"
+        ]
+      },
+      {
+        name: "Culinary Arts & Dining",
+        summary:
+          "Our chefs and culinary experts deliver exceptional, innovative cuisine crafted with the finest ingredients and a passion for gastronomic excellence.",
+        keyResponsibilities: [
+          "Curate dynamic and seasonal menus",
+          "Ensure high-quality preparation and presentation",
+          "Incorporate guest feedback into culinary innovation"
+        ]
+      },
+      {
+        name: "Customer Service & Concierge",
+        summary:
+          "Dedicated to exceeding expectations, our customer service professionals ensure every interaction is warm, responsive, and attentive to individual needs.",
+        keyResponsibilities: [
+          "Provide expert knowledge and local recommendations",
+          "Resolve guest inquiries and concerns promptly",
+          "Create memorable, guest-centric experiences"
+        ]
+      },
+      {
+        name: "Facilities & Support Services",
+        summary:
+          "Behind the scenes, our support staff uphold the highest standards of safety, cleanliness, and operational efficiency to maintain guest comfort.",
+        keyResponsibilities: [
+          "Manage housekeeping and maintenance operations",
+          "Ensure compliance with safety and hygiene standards",
+          "Support all departments with seamless back-of-house operations"
+        ]
+      }
     ]
   },
   highlights: [
@@ -161,7 +212,12 @@ const AboutPage: React.FC = () => {
         title={aboutContent.team.title}
         description={aboutContent.team.description}
         members={aboutContent.team.members}
-        departments={aboutContent.team.departments}
+      />
+
+      <DepartmentsSection
+        title={aboutContent.departments.title}
+        description={aboutContent.departments.description}
+        departments={aboutContent.departments.departments}
       />
       <Highlights highlights={aboutContent.highlights} />
       {/* <AboutCTA cta={aboutContent.cta} /> */}

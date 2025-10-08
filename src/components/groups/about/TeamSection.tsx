@@ -12,10 +12,9 @@ interface TeamSectionProps {
   title: string;
   description: string;
   members: TeamMember[];
-  departments: string[];
 }
 
-const TeamSection: React.FC<TeamSectionProps> = ({ title, description, members, departments }) => {
+const TeamSection: React.FC<TeamSectionProps> = ({ title, description, members }) => {
   return (
     <section className="py-12 md:py-20">
       <div className="container mx-auto px-4">
@@ -47,25 +46,6 @@ const TeamSection: React.FC<TeamSectionProps> = ({ title, description, members, 
                 </p>
               </CardSpotlight>
             ))}
-          </div>
-
-          {/* Departments */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6 text-center">
-              Our Expert Departments
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {departments.map((department, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Award className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {department}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

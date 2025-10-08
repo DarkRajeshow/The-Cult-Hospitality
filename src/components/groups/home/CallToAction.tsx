@@ -77,16 +77,16 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
               placeholder={content.inputPlaceholder}
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base lg:text-lg rounded-full border-2 border-pink-300 focus:border-amber-600 transition-colors"
+              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-base lg:text-lg rounded-full border-2 border-pink-300 focus:border-amber-600 transition-colors"
               required
             />
             <button
               type="submit"
-              className="bg-gradient-to-r flex items-center justify-center from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-gradient-to-r flex items-center justify-center from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base lg:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
               disabled={isSubmitted}
             >
               {isSubmitted ? content.button.submitted : content.button.default}
-              {!isSubmitted && <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />}
+              {!isSubmitted && <ArrowRight className="ml-2 h-5 w-5" />}
             </button>
           </motion.form>
           {error && (
@@ -113,4 +113,4 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
   );
 };
 
-export default CallToAction;
+export default CallToAction;  

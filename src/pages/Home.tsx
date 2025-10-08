@@ -22,7 +22,7 @@ import OurOfferings from '@/components/groups/home/OurOfferings';
 // Centralized Home page content
 const content = {
   hero: {
-    guests: "10K+ Delighted Guests",
+    guests: "3.5lacks+ Delighted Guests",
     heading: ["The Cult", "Hospitality"],
     subtitle: "Where hospitality transforms into",
     typewriterWords: ["experiences", "stories", "elegance", "growth", "moments"],
@@ -126,7 +126,7 @@ const content = {
       id: 6,
       title: "Cult Foundation",
       description: "Community-driven initiatives for sustainable development.",
-      icon: Heart,
+      icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='w-10 h-10' />),
       image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
       gradient: "from-pink-100 to-pink-50",
       subOfferings: [
@@ -135,7 +135,7 @@ const content = {
           title: "Tree Plantation",
           description: "Greening initiatives for a sustainable future.",
           icon: Sprout,
-          image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+          image: "https://images.pexels.com/photos/5029853/pexels-photo-5029853.jpeg",
           gradient: "from-green-100 to-green-50"
 
         },
@@ -144,7 +144,7 @@ const content = {
           title: "Seed Balls",
           description: "Innovative approach to reforestation and environmental conservation.",
           icon: Leaf,
-          image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+          image: "https://images.pexels.com/photos/8543605/pexels-photo-8543605.jpeg?_gl=1*b84a3q*_ga*MTY5MDEyNTQyMS4xNzU2ODg5NTQw*_ga_8JE65Q40S6*czE3NTk5MDc0OTMkbzIkZzEkdDE3NTk5MDc3NDYkajU5JGwwJGgw",
           gradient: "from-emerald-100 to-emerald-50"
         }
       ]
@@ -312,8 +312,8 @@ const content = {
     description: "Own a hotel or property? Let us handle your hospitality operations with our proven management expertise and turn your property into a profitable, guest-loved destination.",
     inputPlaceholder: "Enter your business email",
     button: {
-      default: "Join Us",
-      submitted: "Thank You!"
+      default: "Partner With Us",
+      submitted: "Submission Received"
     },
     error: {
       empty: "Please enter your email.",
