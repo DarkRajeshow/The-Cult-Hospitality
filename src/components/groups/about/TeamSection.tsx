@@ -1,6 +1,6 @@
 import React from 'react';
 import CardSpotlight from './CardSpotlight';
-import { Users, Award } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 interface TeamMember {
   name: string;
