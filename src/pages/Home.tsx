@@ -2,8 +2,6 @@ import {
   Star,
   Shield,
   Heart,
-  Coffee,
-  Wheat,
 } from 'lucide-react';
 
 import HeroSection from '@/components/groups/home/HeroSection';

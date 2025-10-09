@@ -1,14 +1,10 @@
 import { motion } from 'framer-motion';
 import {
-  Coffee,
-  Leaf,
   Star,
   Award,
   Users,
   Heart,
   Zap,
-  Wheat,
-  Sprout
 } from 'lucide-react';
 import CardSpotlight from '@/components/groups/about/CardSpotlight';
 import { BackgroundBeams } from '@/components/ui/background-beams';
