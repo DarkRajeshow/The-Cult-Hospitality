@@ -1,11 +1,8 @@
 import { motion } from 'framer-motion';
-import { 
-  Building, 
-  Calendar, 
-  ChefHat, 
-  Coffee, 
-  Leaf, 
-  Star, 
+import {
+  Coffee,
+  Leaf,
+  Star,
   Award,
   Users,
   Heart,
@@ -42,7 +39,7 @@ const brandsContent = {
       name: "The Cult Stay",
       type: "Boutique Hotel Brand",
       description: "Boutique hotel experiences curated for comfort and culture.",
-      icon: Building,
+      icon: () => (<img src="/assets/images/logo_cult_stay.jpg" alt="The Cult Stay" className='h-10 object-contain' />),
       image: "/assets/images/bedroom.png",
       features: [
         "Contemporary elegance and comfort",
@@ -57,7 +54,7 @@ const brandsContent = {
       name: "The Cult Banquet",
       type: "Premier Event Space",
       description: "Premium event venues for weddings, gatherings, and milestones.",
-      icon: Calendar,
+      icon: () => (<img src="/assets/images/cult-banquet-logo.png" alt="The Cult Banquet" className='h-10 object-contain' />),
       image: "/assets/images/cult-banquet.png",
       features: [
         "Cutting-edge technology",
@@ -72,7 +69,7 @@ const brandsContent = {
       name: "The Cult's Cafe",
       type: "Cozy Café Experience",
       description: "Charming spaces for coffee, calm, and conversations.",
-      icon: Coffee,
+      icon: () => (<img src="/assets/images/cult-cafe-logo.png" alt="The Cult Banquet" className='h-10 object-contain' />),
       image: "/assets/images/cult-cafe.png",
       features: [
         "Artisanal coffees",
@@ -87,7 +84,7 @@ const brandsContent = {
       name: "Cloud Kitchens",
       type: "Delivery-First Dining",
       description: "A new era of delivery-first dining, powered by The Cult Hospitality.",
-      icon: ChefHat,
+      icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
       image: "/assets/images/cults-kitchen.png",
       features: [
         "Delivery-first approach",
@@ -102,7 +99,7 @@ const brandsContent = {
           name: "The Cult's Kitchen",
           type: "Elevated Dining",
           description: "Elevated dining with seasonal menus and conscious cooking.",
-          icon: ChefHat,
+          icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
           image: "/assets/images/cults-kitchen.png",
           features: [
             "Seasonal menus",
@@ -117,7 +114,7 @@ const brandsContent = {
           name: "The Thali Spot",
           type: "Authentic Indian Thalis",
           description: "Authentic, home-style Indian thalis delivered fresh to your door.",
-          icon: Wheat,
+          icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
           image: "/assets/images/cults-kitchen.png",
           features: [
             "Home-style Indian thalis",
@@ -134,7 +131,7 @@ const brandsContent = {
       name: "Other Initiatives by Cult",
       type: "Sustainable Ventures",
       description: "Expanding our impact through sustainable and wellness-focused ventures.",
-      icon: Leaf,
+      icon: () => (<img src="/assets/images/cults-nuts-n-millets.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
       image: "/assets/images/cult-nuts.png",
       features: [
         "Sustainable practices",
@@ -149,7 +146,7 @@ const brandsContent = {
           name: "Cult Organics",
           type: "Premium Organic Products",
           description: "Premium organic products for a healthier lifestyle.",
-          icon: Wheat,
+          icon: () => (<img src="/assets/images/cults-nuts-n-millets.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
           image: "/assets/images/cult-nuts.png",
           features: [
             "Premium organic products",
@@ -164,7 +161,7 @@ const brandsContent = {
               name: "Nuts & Millets",
               type: "Premium Nutrition",
               description: "Premium quality nuts and ancient millets sourced from the finest locations for modern nutrition and wellness.",
-              icon: Wheat,
+              icon: () => (<img src="/assets/images/cults-nuts-n-millets.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
               image: "/assets/images/cult-nuts.png",
               features: [
                 "Premium quality nuts",
@@ -183,7 +180,7 @@ const brandsContent = {
       name: "Social Activities",
       type: "Community Impact",
       description: "Making a positive impact on communities and the environment.",
-      icon: Sprout,
+      icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='h-10' />),
       image: "/assets/images/story.png",
       features: [
         "Community development",
@@ -198,7 +195,7 @@ const brandsContent = {
           name: "Cult Foundation",
           type: "Community Initiatives",
           description: "Community-driven initiatives for sustainable development.",
-          icon: Heart,
+          icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='h-10' />),
           image: "/assets/images/story.png",
           features: [
             "Community-driven initiatives",
@@ -213,7 +210,7 @@ const brandsContent = {
               name: "Tree Plantation",
               type: "Greening Initiatives",
               description: "Greening initiatives for a sustainable future.",
-              icon: Sprout,
+              icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='h-10' />),
               image: "/assets/images/story.png",
               features: [
                 "Tree plantation drives",
@@ -228,7 +225,7 @@ const brandsContent = {
               name: "Seed Balls",
               type: "Reforestation",
               description: "Innovative approach to reforestation and environmental conservation.",
-              icon: Leaf,
+              icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='h-10' />),
               image: "/assets/images/story.png",
               features: [
                 "Innovative reforestation",
@@ -325,7 +322,7 @@ const BrandsPage = () => {
                 Discover our flagship brands that define The Cult Hospitality experience
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {brandsContent.brands.slice(0, 3).map((brand, index) => (
                 <motion.div
@@ -336,10 +333,9 @@ const BrandsPage = () => {
                   viewport={{ once: true }}
                 >
                   <CardSpotlight className="p-6 h-full group transition-transform duration-300">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${brand.gradient} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <brand.icon className="w-6 h-6 text-white" />
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <brand.icon />
                     </div>
-                    
                     <div className="mb-4">
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
                         {brand.name}
@@ -366,8 +362,8 @@ const BrandsPage = () => {
 
                     {brand.image && (
                       <div className="mt-4 rounded-lg overflow-hidden">
-                        <img 
-                          src={brand.image} 
+                        <img
+                          src={brand.image}
                           alt={brand.name}
                           className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
@@ -399,7 +395,7 @@ const BrandsPage = () => {
                 A new era of delivery-first dining, powered by The Cult Hospitality
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {brandsContent.brands[3].subBrands?.map((subBrand) => (
                 <motion.div
@@ -410,10 +406,10 @@ const BrandsPage = () => {
                   viewport={{ once: true }}
                 >
                   <CardSpotlight className="p-6 h-full group transition-transform duration-300">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${subBrand.gradient} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <subBrand.icon className="w-6 h-6 text-white" />
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <subBrand.icon />
                     </div>
-                    
+
                     <div className="mb-4">
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
                         {subBrand.name}
@@ -440,8 +436,8 @@ const BrandsPage = () => {
 
                     {subBrand.image && (
                       <div className="mt-4 rounded-lg overflow-hidden">
-                        <img 
-                          src={subBrand.image} 
+                        <img
+                          src={subBrand.image}
                           alt={subBrand.name}
                           className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
@@ -473,7 +469,7 @@ const BrandsPage = () => {
                 Expanding our impact through sustainable and wellness-focused ventures
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Cult Organics */}
               {/* <motion.div
@@ -539,10 +535,10 @@ const BrandsPage = () => {
                 viewport={{ once: true }}
               >
                 <CardSpotlight className="p-6 h-full group transition-transform duration-300 border-amber-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Wheat className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <img src="/assets/images/cults-nuts-n-millets.png" alt="The Cult's Kitchen" className='h-10' />
                   </div>
-                  
+
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       Nuts & Millets
@@ -578,8 +574,8 @@ const BrandsPage = () => {
                   </div>
 
                   <div className="mt-4 rounded-lg overflow-hidden">
-                    <img 
-                      src="/assets/images/cult-nuts.png" 
+                    <img
+                      src="/assets/images/cult-nuts.png"
                       alt="Nuts & Millets"
                       className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
@@ -609,7 +605,7 @@ const BrandsPage = () => {
                 Making a positive impact on communities and the environment
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Cult Foundation */}
               {/* <motion.div
@@ -675,10 +671,10 @@ const BrandsPage = () => {
                 viewport={{ once: true }}
               >
                 <CardSpotlight className="p-6 h-full group transition-transform duration-300 border-green-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Sprout className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <img src="/assets/images/social-logo.png" alt="The Cult's Kitchen" className='h-10' />
                   </div>
-                  
+
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       Tree Plantation
@@ -714,8 +710,8 @@ const BrandsPage = () => {
                   </div>
 
                   <div className="mt-4 rounded-lg overflow-hidden">
-                    <img 
-                      src="/assets/images/story.png" 
+                    <img
+                      src="/assets/images/story.png"
                       alt="Tree Plantation"
                       className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                     />
@@ -731,10 +727,10 @@ const BrandsPage = () => {
                 viewport={{ once: true }}
               >
                 <CardSpotlight className="p-6 h-full group transition-transform duration-300 border-emerald-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Leaf className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <img src="/assets/images/social-logo.png" alt="The Cult's Kitchen" className='h-10' />
                   </div>
-                  
+
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       Seed Balls
@@ -770,8 +766,8 @@ const BrandsPage = () => {
                   </div>
 
                   <div className="mt-4 rounded-lg overflow-hidden">
-                    <img 
-                      src="/assets/images/story.png" 
+                    <img
+                      src="/assets/images/story.png"
                       alt="Seed Balls"
                       className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                     />
@@ -801,7 +797,7 @@ const BrandsPage = () => {
                 {brandsContent.values.description}
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {brandsContent.values.points.map((point, index) => (
                 <motion.div

@@ -67,7 +67,7 @@ const CallToAction: React.FC<{ content: CallToActionContent }> = ({ content }) =
           </p>
           <motion.form
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleEmailSubmit(e)}
-            className="flex flex-col gap-3 sm:flex-row sm:gap-4 max-w-md mx-auto"
+            className="flex flex-col gap-3 sm:flex-row sm:gap-4 max-w-xl mx-auto"
             variants={itemVariants}
             initial="hidden"
             animate="visible"

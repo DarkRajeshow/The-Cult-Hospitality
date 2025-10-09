@@ -138,10 +138,7 @@ const SubOfferingCard: React.FC<{
                 onClick={handleClick}
             >
                 {subOffering.icon && (
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ${isActive
-                        ? 'bg-black/1o'
-                        : 'bg-white/15'
-                        }`}>
+                    <div className={`rounded-full flex items-center justify-center transition-all duration-200`}>
                         <subOffering.icon className="h-4 w-4 text-black" />
                     </div>
                 )}
@@ -276,8 +273,6 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
 
     return (
         <AnimatedSection className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-
-
             <div className="max-w-7xl mx-auto z-10">
                 <motion.div className="text-center mb-12 sm:mb-16">
                     <Badge className="bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-800 border-orange-200/50 mb-4 sm:mb-6 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold">
@@ -297,7 +292,6 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                     </p>
                 </motion.div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-start">
-
                     {/* Left Side - Cards (No scrollbar, natural flow) */}
                     <motion.div className="space-y-4 lg:pr-4">
                         {offerings.map((offering) => {
@@ -312,16 +306,10 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                                     onMouseLeave={handleCardLeave}
                                     onClick={(e) => handleCardClick(offering, e)}
                                 >
-                                    <Card className={`border-0 shadow-sm transition-all duration-300 overflow-hidden ${isCardActive || isExpanded
-                                        ? 'bg-gray-100'
-                                        : 'bg-white hover:bg-gray-50'
-                                        }`}>
+                                    <Card className={`border-0 shadow-sm transition-all duration-300 overflow-hidden`}>
                                         <CardContent className="p-4 sm:p-6">
                                             <div className="flex items-center space-x-3 sm:space-x-4">
-                                                <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center transition-all duration-300 ${isCardActive || isExpanded
-                                                    ? 'bg-white/20'
-                                                    : `bg-gradient-to-br ${offering.gradient}`
-                                                    }`}>
+                                                <div className={`w-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center transition-all duration-300`}>
                                                     <offering.icon className={`h-5 w-5 sm:h-7 sm:w-7 transition-colors duration-300 ${isCardActive || isExpanded
                                                         ? 'text-black'
                                                         : 'text-gray-700'

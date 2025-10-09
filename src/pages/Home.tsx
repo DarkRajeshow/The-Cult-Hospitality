@@ -2,13 +2,8 @@ import {
   Star,
   Shield,
   Heart,
-  Calendar,
-  ChefHat,
-  Building,
   Coffee,
   Wheat,
-  Leaf,
-  Sprout,
 } from 'lucide-react';
 
 import HeroSection from '@/components/groups/home/HeroSection';
@@ -58,7 +53,7 @@ const content = {
       id: 1,
       title: "The Cult Stay",
       description: "Boutique hotel experiences curated for comfort and culture.",
-      icon: Building,
+      icon: () => (<img src="/assets/images/logo_cult_stay.jpg" alt="The Cult Stay" className='h-12 object-contain' />),
       image: "/assets/images/bedroom.png",
       gradient: "from-blue-100 to-blue-50"
     },
@@ -66,7 +61,7 @@ const content = {
       id: 2,
       title: "The Cult Banquet",
       description: "Premium event venues for weddings, gatherings, and milestones.",
-      icon: Calendar,
+      icon: () => (<img src="/assets/images/cult-banquet-logo.png" alt="The Cult Banquet" className='h-12 object-contain' />),
       image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400&h=300&fit=crop",
       gradient: "from-blue-100 to-blue-50"
     },
@@ -74,7 +69,7 @@ const content = {
       id: 4,
       title: "The Cult's Cafe",
       description: "Charming spaces for coffee, calm, and conversations.",
-      icon: Coffee,
+      icon: () => (<img src="/assets/images/cult-cafe-logo.png" alt="The Cult Banquet" className='h-12 object-contain' />),
       image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=300&fit=crop",
       gradient: "from-blue-100 to-blue-50"
     },
@@ -82,7 +77,7 @@ const content = {
       id: 3,
       title: "Cloud Kitchens",
       description: "A new era of delivery-first dining, powered by The Cult Hospitality.",
-      icon: ChefHat,
+      icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
       image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
       gradient: "from-blue-100 to-blue-50",
       subOfferings: [
@@ -90,7 +85,7 @@ const content = {
           id: 3.1,
           title: "The Cult's Kitchen",
           description: "Elevated dining with seasonal menus and conscious cooking.",
-          icon: ChefHat,
+          icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
           image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
           gradient: "from-blue-100 to-blue-50"
         },
@@ -98,7 +93,7 @@ const content = {
           id: 3.2,
           title: "The Thali Spot",
           description: "Authentic, home-style Indian thalis delivered fresh to your door.",
-          icon: Wheat,
+          icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
           image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop",
           gradient: "from-yellow-100 to-yellow-50"
         }
@@ -108,7 +103,7 @@ const content = {
       id: 5,
       title: "Cult Organics",
       description: "Premium organic products for a healthier lifestyle.",
-      icon: Wheat,
+      icon: () => (<img src="/assets/images/cults-nuts-n-millets.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
       image: "/assets/images/cult-nuts.png",
       gradient: "from-yellow-100 to-yellow-50",
       subOfferings: [
@@ -116,7 +111,7 @@ const content = {
           id: 5.11,
           title: "Nuts & Millets",
           description: "Premium quality nuts and ancient millets sourced from the finest locations for modern nutrition and wellness.",
-          icon: Wheat,
+          icon: () => (<img src="/assets/images/cults-nuts-n-millets.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
           image: "/assets/images/cult-nuts.png",
           gradient: "from-amber-100 to-yellow-50"
         }
@@ -126,7 +121,7 @@ const content = {
       id: 6,
       title: "Cult Foundation",
       description: "Community-driven initiatives for sustainable development.",
-      icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='w-10 h-10' />),
+      icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='h-12' />),
       image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
       gradient: "from-pink-100 to-pink-50",
       subOfferings: [
@@ -134,7 +129,7 @@ const content = {
           id: 6.1,
           title: "Tree Plantation",
           description: "Greening initiatives for a sustainable future.",
-          icon: Sprout,
+          icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='h-12' />),
           image: "https://images.pexels.com/photos/5029853/pexels-photo-5029853.jpeg",
           gradient: "from-green-100 to-green-50"
 
@@ -143,7 +138,7 @@ const content = {
           id: 6.12,
           title: "Seed Balls",
           description: "Innovative approach to reforestation and environmental conservation.",
-          icon: Leaf,
+          icon: () => (<img src="/assets/images/social-logo.png" alt="Cult Foundation" className='h-12' />),
           image: "https://images.pexels.com/photos/8543605/pexels-photo-8543605.jpeg?_gl=1*b84a3q*_ga*MTY5MDEyNTQyMS4xNzU2ODg5NTQw*_ga_8JE65Q40S6*czE3NTk5MDc0OTMkbzIkZzEkdDE3NTk5MDc3NDYkajU5JGwwJGgw",
           gradient: "from-emerald-100 to-emerald-50"
         }

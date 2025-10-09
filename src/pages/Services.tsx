@@ -12,7 +12,13 @@ import {
   Award,
   Mail,
   Phone,
-  MapPin
+  MapPin,
+  Settings,
+  ShoppingCart,
+  Globe,
+  Home,
+  Megaphone,
+  Target,
 } from 'lucide-react';
 import CardSpotlight from '@/components/groups/about/CardSpotlight';
 import { BackgroundBeams } from '@/components/ui/background-beams';
@@ -23,6 +29,53 @@ const servicesContent = {
     heading: "Unlock Your Property’s Full Potential – Partner With Cult Hospitality.",
     subheading: "Grow with The Cult Hospitality",
     description: "The Cult Hospitality is more than a hospitality brand – it's a movement to redefine the guest experience through personalized service, design-forward properties, and operational excellence. Whether you're a property owner, developer, or entrepreneur, our proven model and powerful brand can help you unlock your property's full potential."
+  },
+
+  servicesSection: {
+    title: "Our Services",
+    description: "Comprehensive hotel management and marketing solutions tailored to enhance operations and drive revenue growth.",
+    services: [
+      {
+        icon: Settings,
+        title: "Operations & Management",
+        description: "Full day-to-day management ensuring smooth operations and exceptional guest experiences."
+      },
+      {
+        icon: ShoppingCart,
+        title: "Vendor & Supplies Management",
+        description: "Streamlined procurement and vendor relationships for cost-effective supply chain management."
+      },
+      {
+        icon: TrendingUp,
+        title: "Sales & Marketing",
+        description: "Strategic sales initiatives and marketing campaigns to maximize bookings and revenue."
+      },
+      {
+        icon: Users,
+        title: "Front Office & Guest Relations",
+        description: "Professional front desk operations and personalized guest service management."
+      },
+      {
+        icon: Target,
+        title: "OTA Listing & Optimization",
+        description: "Expert management of online travel agency listings and booking optimization strategies."
+      },
+      {
+        icon: Globe,
+        title: "Website, SEO, Google Business Profile",
+        description: "Complete digital presence optimization including website development, search engine optimization, and local listing management."
+      },
+      {
+        icon: Home,
+        title: "Housekeeping & Maintenance",
+        description: "Comprehensive property upkeep and cleanliness standards to ensure guest satisfaction."
+      },
+      {
+        icon: Megaphone,
+        title: "Paid Marketing Campaigns",
+        description: "Data-driven advertising strategies across multiple platforms to increase visibility and bookings."
+      }
+    ]
   },
 
   whyPartner: {
@@ -140,6 +193,55 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
+
+      {/* our Sercices Section */}
+      <section className="min-h-screen py-20 relative overflow-hidden">
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
+              {servicesContent.servicesSection.title}
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              {servicesContent.servicesSection.description}
+            </p>
+          </motion.div>
+
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-16">
+            {servicesContent.servicesSection.services.map((service, index) => {
+              return (
+                <div
+                  key={index}
+                  className={`transition-all duration-700 opacity-100 translate-y-0`}
+                >
+                  <div
+                    className={`relative h-full bg-white/80 backdrop-blur-sm border-2 rounded-2xl p-8 transition-all duration-500 cursor-pointer group border-gray-200 hover:border-purple-200`}
+                  >
+                    <div className="relative mb-6">
+                      <service.icon className={`w-8 h-8 transition-colors duration-500 text-blue-600`} />
+                    </div>
+
+                    <h3 className={`text-2xl font-bold mb-3 transition-colors duration-500 text-gray-800`}>
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
 
       {/* Why Partner Section */}
       <section className="py-16 md:py-24">

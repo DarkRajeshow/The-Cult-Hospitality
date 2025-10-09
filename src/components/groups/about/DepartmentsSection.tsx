@@ -17,7 +17,7 @@ function DepartmentsSection({ title, description, departments }: DepartmentsSect
     const [expandedDept, setExpandedDept] = useState<number | null>(null);
 
     return (
-        <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-16 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
