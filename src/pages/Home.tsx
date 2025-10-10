@@ -15,7 +15,7 @@ import OurOfferings from '@/components/groups/home/OurOfferings';
 // Centralized Home page content
 const content = {
   hero: {
-    guests: "3.5lacks+ Delighted Guests",
+    guests: "3.5 lakh+ Delighted Guests",
     heading: ["The Cult", "Hospitality"],
     subtitle: "Where hospitality transforms into",
     typewriterWords: ["experiences", "stories", "elegance", "growth", "moments"],
@@ -76,7 +76,7 @@ const content = {
       title: "Cloud Kitchens",
       description: "A new era of delivery-first dining, powered by The Cult Hospitality.",
       icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
+      image: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg",
       gradient: "from-blue-100 to-blue-50",
       subOfferings: [
         {
@@ -84,15 +84,15 @@ const content = {
           title: "The Cult's Kitchen",
           description: "Elevated dining with seasonal menus and conscious cooking.",
           icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
-          image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
+          image: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg",
           gradient: "from-blue-100 to-blue-50"
         },
         {
           id: 3.2,
           title: "The Thali Spot",
           description: "Authentic, home-style Indian thalis delivered fresh to your door.",
-          icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
-          image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop",
+          icon: () => (<img src="/assets/images/cult-thali-spot.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
+          image: "https://images.pexels.com/photos/8818732/pexels-photo-8818732.jpeg",
           gradient: "from-yellow-100 to-yellow-50"
         }
       ]

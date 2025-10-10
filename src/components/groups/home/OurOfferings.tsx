@@ -134,7 +134,7 @@ const SubOfferingCard: React.FC<{
                     : 'hover:bg-white/10 border-transparent'
                     }`}
                 onMouseEnter={onHover}
-                onMouseLeave={onLeave}
+                // onMouseLeave={onLeave}
                 onClick={handleClick}
             >
                 {subOffering.icon && (
@@ -303,7 +303,7 @@ const OurOfferings: React.FC<{ offerings: Offering[] }> = ({ offerings = [] }) =
                                     key={offering.id}
                                     className="group cursor-pointer"
                                     onMouseEnter={() => handleCardHover(offering)}
-                                    onMouseLeave={handleCardLeave}
+                                    // onMouseLeave={handleCardLeave}
                                     onClick={(e) => handleCardClick(offering, e)}
                                 >
                                     <Card className={`border-0 shadow-sm transition-all duration-300 overflow-hidden`}>

@@ -90,14 +90,14 @@ const aboutContent = {
     description: "Our team consists of industry experts committed to delivering excellence:",
     members: [
       {
-        name: "Sahil Bhandari",
-        role: "Co-Founder & Director",
-        description: "Leads with extensive hospitality experience, ensuring innovation and guest satisfaction."
-      },
-      {
         name: "Siddeshwar Jokare",
         role: "Co-Founder & Director",
         description: "Drives strategic growth and operational excellence across all brands."
+      },
+      {
+        name: "Sahil Bhandari",
+        role: "Co-Founder & Director",
+        description: "Leads with extensive hospitality experience, ensuring innovation and guest satisfaction."
       },
       {
         name: "Mahesh Bhandari",
@@ -111,6 +111,77 @@ const aboutContent = {
     description:
       "Each of our specialized departments plays a critical role in delivering exceptional experiences to our guests. Backed by seasoned professionals, our team ensures excellence in every detail — from warm hospitality to flawless operations.",
     departments: [
+      {
+        name: "Culinary Arts & Dining",
+        summary:
+          "Our chefs and culinary experts deliver exceptional, innovative cuisine crafted with the finest ingredients and a passion for gastronomic excellence.",
+        keyResponsibilities: [
+          "Curate dynamic and seasonal menus",
+          "Ensure high-quality preparation and presentation",
+          "Incorporate guest feedback into culinary innovation"
+        ],
+        teamStructure: {
+          KitchenStaff: [
+            "Executive Chef (Chef de Cuisine)",
+            "Sous Chef",
+            "Chef de Partie (Station Chef)",
+            "Commis Chef",
+            "Pastry Chef",
+            "Garde Manger",
+            "Kitchen Porter / Steward"
+          ],
+          FrontOfHouse: [
+            "F&B Manager",
+            "Restaurant Manager",
+            "Bar Manager",
+            "Maître d'hôtel / Host/Hostess",
+            "Waiter/Waitress / Server",
+            "Bartender",
+            "Busser / Runner"
+          ]
+        }
+      },
+      {
+        name: "Facilities & Support Services",
+        summary:
+          "Behind the scenes, our support staff uphold the highest standards of safety, cleanliness, and operational efficiency to maintain guest comfort.",
+        keyResponsibilities: [
+          "Manage housekeeping and maintenance operations",
+          "Ensure compliance with safety and hygiene standards",
+          "Support all departments with seamless back-of-house operations"
+        ],
+        teamStructure: {
+          team: [
+            "Executive Housekeeper",
+            "Assistant Housekeeping Manager",
+            "Housekeeping Supervisor",
+            "Room Attendant / Housekeeper",
+            "Laundry Attendant",
+            "Public Area Attendant"
+          ]
+        }
+      },
+      {
+        name: "Finance & Administration",
+        summary:
+          "This department ensures smooth business operations through meticulous financial management, HR services, and administrative support.",
+        keyResponsibilities: [
+          "Oversee budgeting, reporting, and payroll",
+          "Manage employee records and recruitment",
+          "Support departments with efficient administrative services"
+        ],
+        teamStructure: {
+          team: [
+            "Finance Manager / Controller",
+            "Accountant",
+            "Accounts Payable/Receivable Clerk",
+            "HR Manager",
+            "HR Assistant",
+            "Payroll Officer",
+            "Administrative Assistant"
+          ]
+        }
+      },
       {
         name: "Hospitality & Guest Relations",
         summary:
@@ -132,16 +203,6 @@ const aboutContent = {
         ]
       },
       {
-        name: "Culinary Arts & Dining",
-        summary:
-          "Our chefs and culinary experts deliver exceptional, innovative cuisine crafted with the finest ingredients and a passion for gastronomic excellence.",
-        keyResponsibilities: [
-          "Curate dynamic and seasonal menus",
-          "Ensure high-quality preparation and presentation",
-          "Incorporate guest feedback into culinary innovation"
-        ]
-      },
-      {
         name: "Customer Service & Concierge",
         summary:
           "Dedicated to exceeding expectations, our customer service professionals ensure every interaction is warm, responsive, and attentive to individual needs.",
@@ -151,16 +212,6 @@ const aboutContent = {
           "Create memorable, guest-centric experiences"
         ]
       },
-      {
-        name: "Facilities & Support Services",
-        summary:
-          "Behind the scenes, our support staff uphold the highest standards of safety, cleanliness, and operational efficiency to maintain guest comfort.",
-        keyResponsibilities: [
-          "Manage housekeeping and maintenance operations",
-          "Ensure compliance with safety and hygiene standards",
-          "Support all departments with seamless back-of-house operations"
-        ]
-      }
     ]
   },
   highlights: [

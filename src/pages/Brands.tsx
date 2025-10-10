@@ -81,7 +81,7 @@ const brandsContent = {
       type: "Delivery-First Dining",
       description: "A new era of delivery-first dining, powered by The Cult Hospitality.",
       icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
-      image: "/assets/images/cults-kitchen.png",
+      image: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg",
       features: [
         "Delivery-first approach",
         "Multiple culinary concepts",
@@ -96,7 +96,7 @@ const brandsContent = {
           type: "Elevated Dining",
           description: "Elevated dining with seasonal menus and conscious cooking.",
           icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
-          image: "/assets/images/cults-kitchen.png",
+          image: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg",
           features: [
             "Seasonal menus",
             "Conscious cooking",
@@ -110,8 +110,8 @@ const brandsContent = {
           name: "The Thali Spot",
           type: "Authentic Indian Thalis",
           description: "Authentic, home-style Indian thalis delivered fresh to your door.",
-          icon: () => (<img src="/assets/images/cult-kitchen-logo.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
-          image: "/assets/images/cults-kitchen.png",
+          icon: () => (<img src="/assets/images/cult-thali-spot.png" alt="The Cult's Kitchen" className='w-8 h-8 object-contain' />),
+          image: "https://images.pexels.com/photos/8818732/pexels-photo-8818732.jpeg",
           features: [
             "Home-style Indian thalis",
             "Authentic recipes",
@@ -361,7 +361,7 @@ const BrandsPage = () => {
                         <img
                           src={brand.image}
                           alt={brand.name}
-                          className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-[349px] object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                     )}
@@ -435,7 +435,7 @@ const BrandsPage = () => {
                         <img
                           src={subBrand.image}
                           alt={subBrand.name}
-                          className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-[349px] object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                     )}
@@ -517,7 +517,7 @@ const BrandsPage = () => {
                     <img 
                       src="/assets/images/cult-nuts.png" 
                       alt="Cult Organics"
-                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-[349px] object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CardSpotlight>
@@ -573,7 +573,7 @@ const BrandsPage = () => {
                     <img
                       src="/assets/images/cult-nuts.png"
                       alt="Nuts & Millets"
-                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-[349px] object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CardSpotlight>
@@ -653,7 +653,7 @@ const BrandsPage = () => {
                     <img 
                       src="/assets/images/story.png" 
                       alt="Cult Foundation"
-                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-[349px] object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CardSpotlight>
@@ -705,11 +705,10 @@ const BrandsPage = () => {
                     </ul>
                   </div>
 
-                  <div className="mt-4 rounded-lg overflow-hidden">
+                  <div className="mt-4 rounded-lg overflow-hidden max-h-[340px]">
                     <img
-                      src="/assets/images/story.png"
-                      alt="Tree Plantation"
-                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                      src="https://images.pexels.com/photos/5029853/pexels-photo-5029853.jpeg"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </CardSpotlight>
@@ -761,11 +760,11 @@ const BrandsPage = () => {
                     </ul>
                   </div>
 
-                  <div className="mt-4 rounded-lg overflow-hidden">
+                  <div className="mt-4 rounded-lg overflow-hidden md:h-[340px]">
                     <img
-                      src="/assets/images/story.png"
+                      src="https://images.pexels.com/photos/8543605/pexels-photo-8543605.jpeg?_gl=1*b84a3q*_ga*MTY5MDEyNTQyMS4xNzU2ODg5NTQw*_ga_8JE65Q40S6*czE3NTk5MDc0OTMkbzIkZzEkdDE3NTk5MDc3NDYkajU5JGwwJGgw"
                       alt="Seed Balls"
-                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </CardSpotlight>

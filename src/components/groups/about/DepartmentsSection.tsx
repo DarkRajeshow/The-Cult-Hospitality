@@ -1,10 +1,14 @@
-import { Award, ChevronRight, Briefcase } from 'lucide-react'
-import { useState } from 'react'
+import { Award, Briefcase } from 'lucide-react'
 
 interface IDepartment {
     name: string;
     summary: string;
     keyResponsibilities: string[];
+    teamStructure?: {
+        team?: string[];
+        KitchenStaff?: string[];
+        FrontOfHouse?: string[];
+    };
 }
 
 interface DepartmentsSectionProps {
@@ -14,8 +18,6 @@ interface DepartmentsSectionProps {
 }
 
 function DepartmentsSection({ title, description, departments }: DepartmentsSectionProps) {
-    const [expandedDept, setExpandedDept] = useState<number | null>(null);
-
     return (
         <section className="py-16 md:py-24">
             <div className="container mx-auto px-4">
@@ -38,23 +40,14 @@ function DepartmentsSection({ title, description, departments }: DepartmentsSect
                         {departments?.map((department, index) => (
                             <div
                                 key={index}
-                                className="group relative bg-white rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl overflow-hidden cursor-pointer"
-                                onClick={() => setExpandedDept(expandedDept === index ? null : index)}
+                                className="group relative bg-white rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl overflow-hidden h-full"
                             >
-                                {/* Card Content */}
-                                <div className="p-6">
+                                <div className="p-6 flex flex-col h-full">
                                     {/* Icon and Name */}
-                                    <div className="flex items-start justify-between mb-4">
-                                        <div className="flex items-center space-x-3">
-                                            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
-                                                <Award className="w-6 h-6 text-white" />
-                                            </div>
+                                    <div className="flex items-start mb-4">
+                                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <Award className="w-6 h-6 text-white" />
                                         </div>
-                                        <ChevronRight 
-                                            className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${
-                                                expandedDept === index ? 'rotate-90 text-blue-600' : ''
-                                            }`} 
-                                        />
                                     </div>
                                     
                                     <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
@@ -66,24 +59,77 @@ function DepartmentsSection({ title, description, departments }: DepartmentsSect
                                         {department.summary}
                                     </p>
 
-                                    {/* Expandable Responsibilities */}
-                                    <div className={`transition-all duration-300 ease-in-out ${
-                                        expandedDept === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                    } overflow-hidden`}>
+                                    <div className="flex-grow">
                                         <div className="pt-4 border-t border-gray-100">
-                                            <h4 className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-3">
-                                                Key Responsibilities
-                                            </h4>
-                                            <ul className="space-y-2">
-                                                {department.keyResponsibilities?.map((responsibility, idx) => (
-                                                    <li key={idx} className="flex items-start space-x-2">
-                                                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                                                        <span className="text-sm text-gray-600 leading-relaxed">
-                                                            {responsibility}
-                                                        </span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                            {/* Key Responsibilities */}
+                                            <div className="mb-6">
+                                                <h4 className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-3">
+                                                    Key Responsibilities
+                                                </h4>
+                                                <ul className="space-y-2">
+                                                    {department.keyResponsibilities?.slice(0, 3).map((responsibility, idx) => (
+                                                        <li key={idx} className="flex items-start space-x-2">
+                                                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                                            <span className="text-sm text-gray-600 leading-relaxed">
+                                                                {responsibility}
+                                                            </span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+
+                                            {/* Team Structure */}
+                                            {department.teamStructure && (
+                                                <div className="space-y-4">
+                                                    <h4 className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-3">
+                                                        Team Structure
+                                                    </h4>
+                                                    {department.teamStructure.team && (
+                                                        <div className="mb-4">
+                                                            <ul className="space-y-2">
+                                                                {department.teamStructure.team.slice(0, 3).map((member, idx) => (
+                                                                    <li key={idx} className="flex items-start space-x-2">
+                                                                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                                                        <span className="text-sm text-gray-600 leading-relaxed">
+                                                                            {member}
+                                                                        </span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+                                                    {department.teamStructure.KitchenStaff && (
+                                                        <div className="mb-4">
+                                                            <h5 className="text-xs font-medium text-gray-600 mb-2">Kitchen Staff</h5>
+                                                            <ul className="space-y-2">
+                                                                {department.teamStructure.KitchenStaff.slice(0, 3).map((staff, idx) => (
+                                                                    <li key={idx} className="flex items-start space-x-2">
+                                                                        <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
+                                                                        <span className="text-sm text-gray-600 leading-relaxed">
+                                                                            {staff}
+                                                                        </span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+                                                    {department.teamStructure.FrontOfHouse && (
+                                                        <div>
+                                                            <h5 className="text-xs font-medium text-gray-600 mb-2">Front of House</h5>
+                                                            <ul className="space-y-2">
+                                                                {department.teamStructure.FrontOfHouse.slice(0, 3).map((staff, idx) => (
+                                                                    <li key={idx} className="flex items-start space-x-2">
+                                                                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+                                                                        <span className="text-sm text-gray-600 leading-relaxed">
+                                                                            {staff}
+                                                                        </span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
